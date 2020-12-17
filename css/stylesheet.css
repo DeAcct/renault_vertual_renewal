@@ -11,13 +11,10 @@ header{
     height: 108px;
     background-color:#fff;
     z-index:100;
+    box-shadow: 0 7px 15px rgba(0,0,0,0.3);
 }
 header.active{ /*스크롤이 멈출 때 숨는경우*/
-    top: -108px;
-    box-shadow: 0 7px 30px rgba(0,0,0,0.3);
-}
-header.on{ /*gnb가 열렸을 때*/
-    box-shadow: 0 7px 30px rgba(0,0,0,0.3);
+    top: -108px;   
 }
 
 .logo{
@@ -35,12 +32,12 @@ header.on{ /*gnb가 열렸을 때*/
 .gnb{
     display: none;/*jquery넣을때까지 임시적용*/
     position:absolute;
-    z-index: 100;
+    z-index: 10;
     top: 108px;
     left:0;
     width: 100%;
     height: 100vh;
-    background-color:rgba(255,255,255,0.95);
+    background-color:rgba(255,255,255,0.98);
 }
 .gnb ul{
     padding: 49px 7%;
@@ -304,6 +301,7 @@ header.on{ /*gnb가 열렸을 때*/
     width: 100%;
     height: 100%;
     background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(../img/rn-car-zoe.jpg) center/cover;
+    text-indent: -9999px;
 }
 .car_right .carSummery{ 
     position: absolute;
@@ -342,7 +340,7 @@ header.on{ /*gnb가 열렸을 때*/
     margin: 0 auto;
 }
 .media_inner h2{
-    margin-top: 90px;
+    padding-top: 90px;
     font-size: 1.8rem;
 }
 .media_inner h2 a{
@@ -376,12 +374,12 @@ header.on{ /*gnb가 열렸을 때*/
     width:100%;
     height: 100%;
 }
-.media_inner .media_type{
+.video b{
     padding-top:19px;
     display: inline-block;
     font-size: 1.2rem;
 }
-.media_inner .media_type:after{
+.video b:after{
     display: inline-block;
     content:'';
     width: 12px;
@@ -390,14 +388,14 @@ header.on{ /*gnb가 열렸을 때*/
     vertical-align: -5px;
     margin-left: 10px;
 }
-.media_inner .media_title{
-    font-size: 22px;
+.video h3{
+    font-size: 2.2rem;
     font-weight: 900;
     /*폰트 강약조절*/
     
     padding-top: 15px;
 }
-.media_inner .date{
+.video p{
     font-size: 1.2rem;
     padding-top: 18px;
 }
@@ -553,15 +551,23 @@ footer{
         padding-top: 180px;
         font-size: 3rem;
     }
-    .history_inner h2 a:after{
+    .history_inner h2 a::after{
         width: 18px;
         height: 18px;
         margin-left: 26px;
+        transition: 150ms ease-out;
+    }
+    .history_inner h2 a:hover::after{
+        transform:translate(20px, -20px);
     }
     .history_inner h2 .titleLink{
         width: 252px;
         height: 8px;
         margin-top: 10px;
+        transition: 150ms ease-out;
+    }
+    .history_inner h2 a:hover + .titleLink{
+        width: 272px;
     }
     .slider_wrap{
         margin-top: 73px;
@@ -640,7 +646,6 @@ footer{
     }
     .car_left .Mleft_inner{
         width: 84%;
-        margin: 0 auto;
     }
     .car_left h2{
         padding-top: 101px;
@@ -650,11 +655,19 @@ footer{
         width: 18px;
         height: 18px;
         margin-left: 26px;
+        transition: 150ms ease-out;
+    }
+    .car_left h2 a:hover::after{
+        transform:translate(20px, -20px);
     }
     .car_left h2 .titleLink{
         width: 126px;
         height: 8px;
         margin-top: 10px;
+        transition: 150ms ease-out;
+    }
+    .car_left h2 a:hover + .titleLink{
+        width: 146px;
     }
     .car_left strong{
         padding-top: 30px;
@@ -665,8 +678,8 @@ footer{
         display: flex;
     }
     .car_left ul li{
-        width: 23.437%;
-        margin-right: 1.563%;/*12/768*100*/
+        width: 23.611%; /*153/648*100*/
+        margin-right: 2.006%;/*13/648*100*/
         height: 74px;
         border-bottom: 2px solid #0B1F38;
     }
@@ -692,51 +705,267 @@ footer{
     }
     .car_right{
         width: 100%;
-        height: 249px;
+        height: 580px;
+        background-color:#f0eae9;
     }
     .car_right .carslide{
-        width: 100%;
+        width: 84.375%;
         height: 100%;
-        position:relative;
+        margin: 0 auto;
+        position: relative;
     }
     .car_right .carImg{
         width: 100%;
-        height: 100%;
-        background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(../img/rn-car-zoe.jpg) center/cover;
+        height: 430px;
+        background: url(../img/rn-car-zoe.jpg) center/cover;
+        position: absolute;
+        top: -57px;
     }
     .car_right .carSummery{ 
-        position: absolute;
-        left: 8%;
-        bottom: 12.048%;
+        position: static;
+        float:left;
+        padding-top: 391px;
     }
     .car_right .carSummery .c_name{
+        font-size: 3.5rem;
+        font-weight: 900;
+        color:#0B1F38;
+        padding-bottom: 24px;
+    }
+    .car_right .carSummery .c_title{
+        padding-bottom: 14px;
+        display: block;
         font-size: 1.8rem;
+        color:#0B1F38;
+    }
+    .car_right .carSummery .c_summery{
+        color:#0B1F38;
+        font-size: 1.8rem;
+    }
+    .car_right .carslide .btn{
+        position:relative;
+        float:right;
+        width: 180px;
+        height: 50px;
+        text-indent: 0;
+        display: block;
+        border: 1px solid #0B1F38;
+        margin-top: 420px;
+        text-align: center;
+        line-height: 48px;
+        font-size: 1.7rem;
+        transition: 100ms ease-out;
+    }
+    .car_right .carslide .btn:hover{
+        color:#fff;
+        background-color:#0B1F38;
+    }
+    
+    .media_inner{
+        width: 84.375%;
+    }
+    .media_inner h2{
+        font-size: 3rem;
+        padding-top: 180px;
+    }
+    .media_inner h2 a:after{
+        width: 18px;
+        height: 18px;
+        margin-left: 26px;
+        transition: 150ms ease-out;
+    }
+    .media_inner h2 a:hover::after{
+        transform:translate(20px, -20px);
+    }
+    .media_inner h2 .titleLink{
+        width: 126px;
+        height: 8px;
+        margin-top: 10px;
+        transition: 150ms ease-out;
+    }
+    .media_inner h2 a:hover + .titleLink{
+        width: 146px;
+    }
+    .media_inner .video{
+        width: 100%;
+        padding-top: 65px;
+    }
+    .media_inner .video .youtube_area{
+        width: 100%;
+        height: 475px;
+    }
+    .video b{
+        padding-top:42px;
+        font-size: 1.8rem;
+    }
+    .video b:after{
+        vertical-align: -3px;
+        margin-left: 15px;
+    }
+    .video h3{
+        font-size: 4.3rem;
         font-weight: 900;
         /*폰트 강약조절*/
 
-        color:#fff;
-        padding-bottom: 10px;
+        padding-top: 37px;
     }
-    .car_right .carSummery .c_title{
-        padding-bottom: 10px;
+    .video p{
+        font-size: 1.6rem;
+        padding-top: 43px;
+    }
+    
+    .news.pc{
         display: block;
-        font-size: 1.4rem;
-        color:#fff;
+        margin-top: 114px;
+        height: 453px;
     }
-    .car_right .carSummery .c_summery{
-        color:#fff;
-        font-size: 1.2rem;
+    .newses{
+        float: left;
+        width: 29.321%;
+        height: 453px;
+        margin-right: 6.019%;
     }
-    .car_right .carslide .btn{
+    .newses:last-child{
+        margin: 0;
+    }
+    .newses .news_img{
+        width: 100%;
+        height: 270px;
+        text-indent: -9999px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position:relative;
+    }
+    .newses .news_img::before{
         position:absolute;
-        top:0;
-        left: 0;
+        z-index: -1;
         width: 100%;
         height: 100%;
-        text-indent: -9999px;
+        content: '';
+        left: 0;
+        top: 0;
+        background-color:#f5a605;
+        transition: 150ms ease-out;
+    }
+    .newses .news_img:hover::before{
+        top: 10px;
+        left: 10px;
+    }
+    .newses:nth-child(1) .news_img{
+        background-image: url(../img/rn-news-globalenv.jpg);
+    }
+    .newses:nth-child(2) .news_img{
+        background-image: url(../img/rn-news-zoerelease.jpg);
+    }
+    .newses:nth-child(3) .news_img{
+        background-image: url(../img/rn-news-masterrelease.jpg);
+    }
+    .newses b{
+        font-size: 1.7rem;
+        display: inline-block;
+        margin-top: 26px;
+    }
+    .newses b::after{
+        display: inline-block;
+        content: '';
+        width: 18px;
+        height: 18px;
+        background: url(../img/rn-icon-news.svg) no-repeat;
+        background-size: contain;
+        vertical-align: -2px;
+        margin-left: 15px;
+    }
+    .newses h3{
+        line-height: 28px;
+        font-size: 2rem;
+        font-weight: 900;
+        padding-top: 10px;
+    }
+    .newses p{
+        font-size: 1.5rem;
+        padding-top: 25px;
+    }
+
+    .service_inner h2{
+        margin: 180px auto 0;
+        font-size: 3rem;
+        width: 84.375%;
+    }
+    .service_inner h2 a:after{
+        width: 18px;
+        height: 18px;
+        margin-left: 26px;
+        transition: 150ms ease-out;
+    }
+    .service_inner h2 a:hover::after{
+        transform:translate(20px, -20px);
+    }
+    .service_inner h2 .titleLink{
+        width: 126px;
+        height: 8px;
+        margin-top: 10px;
+        transition: 150ms ease-out;
+    }
+    .service_inner h2 a:hover + .titleLink{
+        width: 146px;
+    }
+    .service_inner .banner{
+        margin-top: 32px;
+        height: 724px;
+        width: 100%;
+        background: url(../img/rn-service.jpg) center/cover;
+    }
+    .service_inner .banner h3{
+        font-size: 3.5rem;
+        padding-top: 304px;
+    }
+    .service_inner .banner .btn{
+        display: block;
+        margin-top: 36px;
+        font-size: 1.5rem;
+        color:#fff;
+        text-align: center;
+        width: 180px;
+        height: 50px;
+        line-height: 48px;
     }
     
-    
+    footer{
+        height: 200px;
+        border-top: 2px solid #f0eae9;
+        margin-top: 125px;
+    }
+    .footer_inner{
+        width: 84%;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .footer_inner .sns li{
+        float:left;
+        width: 58px;
+        height: 58px;
+        margin-right: 38px;
+        margin-top: 72px;
+    }
+    .footer_inner .sns li:nth-child(1){
+        background-image: url(../img/rn-sns-facebook.svg);
+    }
+    .footer_inner .sns li:nth-child(2){
+        background-image: url(../img/rn-sns-naverblog.svg);
+    }
+    .footer_inner .sns li:nth-child(3){
+        background-image: url(../img/rn-sns-instagram.svg);
+    }
+    .footer_inner .sns li:nth-child(4){
+        background-image: url(../img/rn-sns-youtube.svg);
+    }
+
+    .footer_inner p{
+        margin-top: 92px;
+        font-size: 2.4rem;
+        float:right;
+    }
 }
 
 
