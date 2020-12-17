@@ -1,0 +1,745 @@
+@charset "utf-8";
+
+.pc {display:none;}
+.mobile {}
+
+header{
+    position:fixed;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 108px;
+    background-color:#fff;
+    z-index:100;
+}
+header.active{ /*스크롤이 멈출 때 숨는경우*/
+    top: -108px;
+    box-shadow: 0 7px 30px rgba(0,0,0,0.3);
+}
+header.on{ /*gnb가 열렸을 때*/
+    box-shadow: 0 7px 30px rgba(0,0,0,0.3);
+}
+
+.logo{
+    float:left;
+    width: 128px; /*255/2*/
+    height: 39px;
+    margin-top: 34px;
+    margin-left: 7%;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.gnb{
+    display: none;/*jquery넣을때까지 임시적용*/
+    position:absolute;
+    z-index: 100;
+    top: 108px;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    background-color:rgba(255,255,255,0.95);
+}
+.gnb ul{
+    padding: 49px 7%;
+    width: 100%;
+}
+.gnb ul li{
+    font-size: 2rem;
+    padding-bottom: 31px
+}
+.gnb ul li:last-child{
+    padding: 0;
+}
+.gnb ul li a{
+    width: 100%;
+}
+
+.search{    
+    position:absolute;
+    top: 38px;
+    right: 21%;
+    width: 35px;
+    height: 35px;
+    background: url(../img/rn-icon-search.png) no-repeat;
+    background-size: contain;
+}
+.hamburger{
+    position:absolute;
+    top: 36px;
+    right: 7%;
+    width: 36px;
+    height: 35px;
+}
+.hamburger span{
+    display: block;
+    width: 36px;
+    height: 2px;
+    background-color:#0B1F38;
+    margin-bottom: 14px;
+    transition: 150ms ease-out;
+}
+
+.hamburger.open span:first-child{
+    transform: rotate(45deg) translateY(11px);
+}
+.hamburger.open span:nth-child(2){
+    display:none;
+}
+.hamburger.open span:last-child{
+    transform: rotate(-45deg) translateY(-11px);
+}
+
+.hamburger span:last-child{
+    margin: 0;
+}
+
+
+
+#visual{
+    width: 100%;
+    height: 377px;
+    background: url(../img/rn-visual.jpg) center/cover;
+    margin-top: 108px;
+}
+.visual_wrap{
+    position:relative;
+    width: 84%;
+    height: 377px;
+    margin:0 auto;
+}
+.visual_wrap h2{
+    text-indent: -9999px;
+    overflow: hidden;
+}
+.identity{
+    position:absolute;
+    top:50%;
+    margin-top: -85px;
+    width: 100%;
+    height: 170px;
+}
+.identity .cls-1{
+    stroke-width: 2px;
+    stroke: #fff;
+    fill:none;
+}
+
+#history{
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+.history_inner{
+    width: 84%;
+    margin: 0 auto;
+}
+.history_inner h2{
+    padding-top: 90px;
+    font-size: 1.8rem;
+}
+.history_inner h2 a{
+    display: inline;
+}
+.history_inner h2 a:after{
+    display: inline-block;
+    content:'';
+    width: 14px;
+    height: 14px;
+    background: url(../img/rn-icon-arrow.svg) no-repeat;
+    background-size: contain;
+    margin-left: 15px;
+}
+.history_inner h2 .titleLink{
+    display: block;
+    width: 154px;
+    height: 4px;
+    background-color:#f5a605;
+    margin-top: 5px;
+}
+.slider_wrap{
+    margin-top: 32px;
+    position: relative;
+    width: 92vw;
+    height: 239px;
+    overflow: scroll;
+    margin-bottom: 90px;
+    /*
+    스크롤바는 768부터 사라짐, 
+    768부터 이전/다음 버튼방식
+    */
+}
+.slider_wrap .slides{
+    position:absolute;
+    vertical-align: middle;
+    width: 700px;
+    height: 239px;
+    left: 0;
+    top: 0;
+}
+.slider_wrap .slides li{
+    float:left;
+    background-position: center;
+    background-size: cover;
+}
+.slider_wrap .slides a{
+    position:relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8));
+}
+.slider_wrap .slides a span{
+    position:absolute;
+    left: 20px;
+    bottom: 18px;
+    color:#fff;
+    font-size: 1.8rem;
+}
+.slider_wrap .slides li:nth-child(2n+1){
+    display: block;
+    width: 156px;
+    height: 204px;
+    margin-top: 18px;
+}
+.slider_wrap .slides li:nth-child(2n){
+    display: block;
+    width: 178px;
+    height: 239px;
+}
+.slider_wrap .slides li:nth-child(1){
+    background-image: url(../img/rn-history-renault.jpg);
+}
+.slider_wrap .slides li:nth-child(2){
+    background-image: url(../img/rn-history-history.jpg);
+}
+.slider_wrap .slides li:nth-child(3){
+    background-image: url(../img/rn-history-racing.jpg);
+}
+.slider_wrap .slides li:nth-child(4){
+    background-image: url(../img/rn-history-future.jpg);
+}
+.main_wrap .next,
+.main_wrap .prev{
+    display: none;
+    /*모바일에서는 이전다음버튼 불필요*/
+}
+
+.car_left{
+    width: 100%;
+    height: 305px;
+    background-image: url(../img/rn-car-leftbg.jpg);
+    background-position: top;
+    background-size: cover;
+}
+.car_left .Mleft_inner{
+    width: 84%;
+    margin: 0 auto;
+}
+.car_left h2{
+    padding-top: 48px;
+    font-size: 1.8rem;
+}
+.car_left h2 a{
+    display: inline;
+}
+.car_left h2 a:after{
+    display: inline-block;
+    content:'';
+    width: 14px;
+    height: 14px;
+    background: url(../img/rn-icon-arrow.svg) no-repeat;
+    background-size: contain;
+    margin-left: 15px;
+}
+.car_left h2 .titleLink{
+    display: block;
+    width: 78px;
+    height: 4px;
+    background-color:#fff;
+    margin-top: 5px;
+}
+.car_left strong{
+    display: block;
+    padding-top: 14px;
+    font-size: 2.2rem;
+}
+.car_left ul{
+    margin-top: 13px;
+}
+.car_left ul li{
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #0B1F38;
+}
+
+.car_left ul li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-size: 1.2rem;
+    line-height: 40px;
+}
+.car_left ul li.on{
+    /*선택됐을 시*/
+    border-bottom-width: 2px;
+}
+.car_left ul li.on a{
+    font-size: 2rem;
+    font-weight: 900;
+    /*폰트 강약조절*/
+}
+.car_right{
+    width: 100%;
+    height: 249px;
+}
+.car_right .carslide{
+    width: 100%;
+    height: 100%;
+    position:relative;
+}
+.car_right .carImg{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(../img/rn-car-zoe.jpg) center/cover;
+}
+.car_right .carSummery{ 
+    position: absolute;
+    left: 8%;
+    bottom: 12.048%;
+}
+.car_right .carSummery .c_name{
+    font-size: 1.8rem;
+    font-weight: 900;
+    /*폰트 강약조절*/
+    
+    color:#fff;
+    padding-bottom: 10px;
+}
+.car_right .carSummery .c_title{
+    padding-bottom: 10px;
+    display: block;
+    font-size: 1.4rem;
+    color:#fff;
+}
+.car_right .carSummery .c_summery{
+    color:#fff;
+    font-size: 1.2rem;
+}
+.car_right .carslide .btn{
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+}
+
+.media_inner{
+    width: 84%;
+    margin: 0 auto;
+}
+.media_inner h2{
+    margin-top: 90px;
+    font-size: 1.8rem;
+}
+.media_inner h2 a{
+    display: inline;
+}
+.media_inner h2 a:after{
+    display: inline-block;
+    content:'';
+    width: 14px;
+    height: 14px;
+    background: url(../img/rn-icon-arrow.svg) no-repeat;
+    background-size: contain;
+    margin-left: 15px;
+}
+.media_inner h2 .titleLink{
+    display: block;
+    width: 78px;
+    height: 4px;
+    background-color:#f5a605;
+    margin-top: 5px;
+}
+.media_inner .video{
+    width: 100%;
+    padding-top: 32px;
+}
+.media_inner .video .youtube_area{
+    width: 100%;
+    height: 238px;
+}
+.media_inner .video iframe{
+    width:100%;
+    height: 100%;
+}
+.media_inner .media_type{
+    padding-top:19px;
+    display: inline-block;
+    font-size: 1.2rem;
+}
+.media_inner .media_type:after{
+    display: inline-block;
+    content:'';
+    width: 12px;
+    height: 18px;
+    background: url(../img/rn-icon-video.svg);
+    vertical-align: -5px;
+    margin-left: 10px;
+}
+.media_inner .media_title{
+    font-size: 22px;
+    font-weight: 900;
+    /*폰트 강약조절*/
+    
+    padding-top: 15px;
+}
+.media_inner .date{
+    font-size: 1.2rem;
+    padding-top: 18px;
+}
+
+.service_inner h2{
+    margin: 90px auto 0;
+    font-size: 1.8rem;
+    width: 84%;
+}
+.service_inner h2 a{
+    display: inline;
+}
+.service_inner h2 a:after{
+    display: inline-block;
+    content:'';
+    width: 14px;
+    height: 14px;
+    background: url(../img/rn-icon-arrow.svg) no-repeat;
+    background-size: contain;
+    margin-left: 15px;
+}
+.service_inner h2 .titleLink{
+    display: block;
+    width: 78px;
+    height: 4px;
+    background-color:#f5a605;
+    margin-top: 5px;
+}
+.service_inner .banner{
+    margin-top: 32px;
+    height: 362px;
+    width: 100%;
+    background: url(../img/rn-service.jpg) center/cover;
+}
+.service_inner .banner h3{
+    font-size: 1.8rem;
+    font-weight: 900;
+    color:#fff;
+    text-align: center;
+    padding-top: 158px;
+}
+.service_inner .banner .btn{
+    display: block;
+    margin: 24px auto 0;
+    font-size: 1.2rem;
+    color:#fff;
+    text-align: center;
+    width: 105px;
+    height: 35px;
+    line-height: 33px;
+    border: 1px solid #fff; 
+}
+
+footer{
+    width: 100%;
+    height: 100px;
+    border-top: 1px solid #f0eae9;
+    margin-top: 64px;
+}
+.footer_inner{
+    width: 84%;
+    height: 100%;
+    margin: 0 auto;
+}
+.footer_inner .sns li{
+    float:left;
+    width: 29px;
+    height: 29px;
+    margin-right: 19px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 36px;
+}
+.sns li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.footer_inner .sns li:nth-child(1){
+    background-image: url(../img/rn-sns-facebook.svg);
+}
+.footer_inner .sns li:nth-child(2){
+    background-image: url(../img/rn-sns-naverblog.svg);
+}
+.footer_inner .sns li:nth-child(3){
+    background-image: url(../img/rn-sns-instagram.svg);
+}
+.footer_inner .sns li:nth-child(4){
+    background-image: url(../img/rn-sns-youtube.svg);
+}
+
+.footer_inner p{
+    margin-top: 46px;
+    font-size: 1.2rem;
+    float:right;
+}
+
+@media all and (min-width:768px){
+    .logo{
+        float:left;
+        width: 154px;
+        height: 47px;
+        margin-top: 32px;
+        margin-left: 7.813%;
+    }
+
+    .search{
+        right: 16.661%;
+    }
+    .hamburger{
+        right: 7.813%;
+    }
+    
+    .gnb ul{
+        padding: 126px 7.813%;
+        width: 100%;
+    }
+    .gnb ul li{
+        font-size: 4rem;
+        padding-bottom: 62px
+    }
+    .gnb ul li a{
+        position:relative;
+        width: 100%;
+        height: 100%;
+    }
+    .gnb ul li a::after{
+        transition: 150ms ease-out;
+        content: '';
+        position:absolute;
+        right: 0;
+        top:0;
+        width: 70%;
+        height: 50%;
+        border-bottom: 2px solid rgba(245, 166, 5, 0);
+    }
+    .gnb ul li a:hover::after{
+        border-bottom: 2px solid rgba(245, 166, 5, 1);
+    }
+    
+    #visual{
+        height: 863px;
+    }
+    .visual_wrap{
+        width: 84.375%;
+        height: 863px;
+    }
+    
+    .history_inner{
+        width: 84.375%;
+    }
+    .history_inner h2{
+        padding-top: 180px;
+        font-size: 3rem;
+    }
+    .history_inner h2 a:after{
+        width: 18px;
+        height: 18px;
+        margin-left: 26px;
+    }
+    .history_inner h2 .titleLink{
+        width: 252px;
+        height: 8px;
+        margin-top: 10px;
+    }
+    .slider_wrap{
+        margin-top: 73px;
+        height: 480px;
+        overflow: hidden;
+        margin-bottom: 180px;
+    }
+    .slider_wrap .slides{
+        width: 1296px;
+        height: 239px;
+    }
+    .slider_wrap .slides a{
+        background: none;
+        transition: 150ms ease-out;
+        width: 100%;
+        height: 100%;
+    }
+    .slider_wrap .slides li{
+        overflow: hidden;
+        transition: 150ms ease-out;
+    }
+    .slider_wrap .slides li:hover a{
+        background-color: rgba(0,0,0,0.5);
+    }
+    .slider_wrap .slides li:hover{
+        transform: scale(0.9);
+    }
+    .slider_wrap .slides a span{
+        color: #fff;
+        top: 50%;
+        bottom: auto;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        font-size: 3.6rem;
+        transition: 150ms ease-out;
+    }
+    .slider_wrap .slides li:hover span{
+        opacity:1;
+    }
+    .slider_wrap .slides li:nth-child(2n+1){
+        width: 312px;
+        height: 408px;
+        margin-top: 36px;
+    }
+    .slider_wrap .slides li:nth-child(2n){
+        width: 336px;
+        height: 480px;
+    }
+    
+    #history{
+        position:relative;
+    }
+    .main_wrap .next,
+    .main_wrap .prev{
+        display: block;
+        position:absolute;
+        right: 0;
+        top: 50%;
+        width: 72px;
+        height: 120px;
+        background:url(../img/rn-icon-right.png) no-repeat center, #99b5c2;
+        text-indent: -9999px;
+    }
+    .main_wrap .prev{
+        display: none;/*제이쿼리 넣기 전까지 유지*/
+        left: 0;
+        right: auto;
+        background-image:url(../img/rn-icon-left.png);
+    }
+    /*prev는 슬라이드 오른쪽으로 이동했을 때 나타난다.*/
+    
+    .car_left{
+        width: 100%;
+        height: 409px;
+    }
+    .car_left .Mleft_inner{
+        width: 84%;
+        margin: 0 auto;
+    }
+    .car_left h2{
+        padding-top: 101px;
+        font-size: 3rem;
+    }
+    .car_left h2 a:after{
+        width: 18px;
+        height: 18px;
+        margin-left: 26px;
+    }
+    .car_left h2 .titleLink{
+        width: 126px;
+        height: 8px;
+        margin-top: 10px;
+    }
+    .car_left strong{
+        padding-top: 30px;
+        font-size: 4.5rem;
+    }
+    .car_left ul{
+        margin-top: 33px;
+    }
+    .car_left ul li{ 
+        display: inline-block;
+        width: 23.437%;
+        margin-right: 1.563%;/*12/768*100*/
+        height: 74px;
+        border-bottom: 2px solid #0B1F38;
+    }
+    .car_left ul li a{
+        width: 100%;
+        height: 100%;
+        display: block;
+        font-size: 2rem;
+        line-height: 74px;
+    }
+    .car_left ul li:last-child{
+        margin-right: 0;
+    }
+    .car_left ul li.on{
+        /*선택됐을 시*/
+        border-bottom-width: 6px;
+    }
+    .car_left ul li.on a{
+        font-size: 4rem;
+        font-weight: 900;
+        /*폰트 강약조절*/
+    }
+    .car_right{
+        width: 100%;
+        height: 249px;
+    }
+    .car_right .carslide{
+        width: 100%;
+        height: 100%;
+        position:relative;
+    }
+    .car_right .carImg{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(../img/rn-car-zoe.jpg) center/cover;
+    }
+    .car_right .carSummery{ 
+        position: absolute;
+        left: 8%;
+        bottom: 12.048%;
+    }
+    .car_right .carSummery .c_name{
+        font-size: 1.8rem;
+        font-weight: 900;
+        /*폰트 강약조절*/
+
+        color:#fff;
+        padding-bottom: 10px;
+    }
+    .car_right .carSummery .c_title{
+        padding-bottom: 10px;
+        display: block;
+        font-size: 1.4rem;
+        color:#fff;
+    }
+    .car_right .carSummery .c_summery{
+        color:#fff;
+        font-size: 1.2rem;
+    }
+    .car_right .carslide .btn{
+        position:absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-indent: -9999px;
+    }
+    
+    
+}
+
+
+
+
+
+

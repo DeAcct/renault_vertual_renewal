@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/*폰트 불러오기*/
+@import url(http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box;
+}
+html{
+    font-size: 0.625em;
+}
+body,h1,h2,h3,h4,h5,h6,button {
+	font-family:"Spoqa Han Sans", "돋움", dotum, sans-serif;
+	line-height:1;
+    color:#0B1F38;
+}
+*::selection{
+    background-color:#f5a605;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ul, ol, li{
+	list-style: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+    display: block;
+    text-decoration:none;
+    color:#0B1F38;
+}
+img,fieldset {
+    border:none; vertical-align:middle;
+}
+strong,em,b,i,address {
+    font-weight:normal; font-style:normal;
+}
+button {
+	border:none;
+	background-color:transparent;
+	cursor:pointer;
+    padding:0;
+    border-radius: 0;
+}
+
+
+/*common*/
+.blind{
+    text-indent: -9999px;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+}
