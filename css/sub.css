@@ -1,0 +1,774 @@
+@charset "utf-8";
+
+#visual{
+    background: url(../img/rn-visual-sub1.jpg) no-repeat center/cover;
+}
+
+#visual .sub{
+    display: block;
+    width: 84%;
+    text-indent: 0;
+    padding-top: 162px;
+    font-size: 6rem;
+    font-weight: 900;
+}
+
+#introduce{
+    width: 100%;
+    position:relative;
+    margin-top: 90px;
+}
+.intd_inner{
+    width: 84%;
+    margin: 0 auto;
+}
+.intd_bg{
+    width: 100%;
+    height: 346px;
+    transform: skewY(10deg);
+    background-color:#f5a605;
+    position:absolute;
+    top: 50px;
+    z-index: -1;
+}
+.intd_inner h2{
+    display: block;
+    height: 164px;
+}
+.intd_inner h2 span{
+    font-size: 7.5rem;
+    font-weight: 900;
+    position:absolute;
+    left: 8.5%;
+}
+.intd_inner h2 span:last-child{
+    top: 91px;
+    right: 8.5%;
+    left: auto;
+}
+.intd_pic{
+    margin-top: 17px;
+    width: 100%;
+    height: 307px;
+    background: url(../img/rn-sub1-intd.jpg) no-repeat center/cover;
+}
+.intd_pic p{
+    width:100%;
+    margin: 0 auto;
+    padding: 31px 8.5%;
+    display: block;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color:#fff;
+    background-color: rgba(0,0,0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+#years{
+    width: 100%;
+    margin-top: 90px;
+    
+}
+.years_inner .year_left{
+    width: 100%;
+}
+
+.years_inner h2{
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-left: 8.5%;
+}
+.years_inner .year_left .years_pic{
+    margin-top: 25px;
+    background: url(../img/rn-sub1-history.jpg) no-repeat center/cover;
+    width: 100%;
+    height: 286px;/*572*/
+}
+.years_inner .year_right{
+    width: 84%;
+    height: 419px;
+    margin: 26px auto 0;
+}
+.years_inner .year_right li{
+    margin-bottom: 30px;
+}
+.years_inner .year_right li:last-child{
+    margin-bottom: 0;
+}
+.years_inner .year_right li span{
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+.years_inner .year_right li a{
+    font-size: 1.2rem;
+    padding-top: 20px;
+}
+.years_inner .year_right strong{
+    font-size: 2.5rem;
+    font-weight: 900;
+    color:#f5a605;
+    float:right;
+    margin-top: 45px;
+}
+
+#racing{
+    width: 100%;
+    height: 472px;
+    margin-top: 90px;
+    position: relative;
+}
+.race_pic{
+    width: 100%;
+    height: 472px;
+    background: url(../img/rn-sub1-race.jpg) no-repeat center/cover;
+}
+.race_right{
+    position:absolute;
+    width: 100%;
+    height: 472px;
+    top: 0;
+    left: 0;
+}
+.race_right h2{
+    color:#fff;
+    margin-top: 39px;
+    margin-left: 8.5%;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+.race_right .identity_wrap{
+    margin-left: 8.5%;
+    margin-top: 32px;
+    width: 91.5%;
+}
+.race_right .identity_wrap .race_identity{
+    width: 100%;
+    height:100%;
+}
+.race_right .race_identity>*{
+    fill:none;
+    stroke: #fff;
+    stroke-width: 3px;
+}
+.race_right p{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color:#fff;
+    padding: 30px 8.5%;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    background-color:rgba(0,0,0,0.5);
+    backdrop-filter:blur(10px);
+}
+
+#future{
+    width: 100%;
+    margin-top: 90px;
+}
+.future_inner{
+    text-align: center;
+}
+.future_inner h2{
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 17px;
+}
+.future_inner strong{
+    display: block;
+    margin: 0 auto;
+    width: 84%;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+.future_boxes{/*회색박스들 전체 감싸기*/
+    width:100%;
+}
+.future_boxes>div{ /*회색박스*/
+    width: 100%;
+    height: 121px;
+    background-color:#f0eae9;
+    margin-bottom: 14px;
+}
+.future_boxes>div>*{ /*박스 안 모든요소*/
+    float:left;
+}
+.future_boxes>div>div{ /*박스 내 아이콘*/
+    margin: 30px 0 0 8.5%;
+    width: 87px;
+    height: 63px;
+}
+.future_inner svg{
+    width: 100%;
+    height: 100%;
+}
+.future_inner svg>*{ /*svg 색상-굵기적용*/
+    stroke:#f5a605;
+    stroke-width: 1px;
+    fill:none;
+    
+}
+.future_inner p{
+    font-size: 1.3rem;
+    line-height: 1.5;
+    width: 52.734%;
+    text-align: left;
+    margin: 40px 0 0 28px;
+}
+
+@media all and (min-width:768px){
+    #visual .sub{
+        padding-top: 324px;
+        font-size: 12rem;
+        width: 84.375%;
+    }
+
+    #introduce{
+        margin-top: 180px;
+    }
+    .intd_inner{
+        width: 84.375%;
+    }
+    .intd_bg{
+        height: 350px;
+        top: 90px;
+        z-index: -1;
+    }
+    .intd_inner h2{
+        display: block;
+        height: 294px;
+    }
+    .intd_inner h2 span{
+        font-size: 15rem;
+        left: 8.5%;
+    }
+    .intd_inner h2 span:last-child{
+        top: 170px;
+        right: 7.813%;
+    }
+    .intd_pic{
+        margin-top: 40px;
+        height: 615px;
+    }
+    .intd_pic p{
+        width: 100%;
+        padding: 49px 7.813%;
+        font-size: 2.5rem;
+    }
+    
+    #years{
+        margin-top: 180px;
+    }
+    .years_inner .year_left{
+        width: 100%;
+    }
+    .years_inner h2{
+        font-size: 5rem;
+        margin-left: 7.813%;
+    }
+    .years_inner .year_left .years_pic{
+        margin-top: 50px;
+        height: 572px;
+    }
+    .years_inner .year_right{
+        position:relative;
+        width: 100%;
+        height: 732px;
+        margin-top: 52px;
+        padding-left: 13.281%;
+    }
+    .years_inner .year_right li{
+        margin-bottom: 106px;
+    }
+    .years_inner .year_right li:last-child{
+        margin-bottom: 0;
+    }
+    .years_inner .year_right li span{
+        font-size: 3rem;
+        font-weight: 900;
+        float:left;
+    }
+    .years_inner .year_right li span:after{
+        content:'';
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-color:#99b5c2;
+        margin: 0 38px;
+        vertical-align: 5px;
+        border-radius: 50%;
+    }
+    .years_inner .year_right li a{
+        font-size: 2.5rem;
+        display: inline-block;
+        padding: 2px 0 8px 0;
+        position:relative;
+    }
+    .years_inner .year_right li a::after{
+        width: 0;
+        height: 0;
+        content: '';
+        position:absolute;
+        bottom: 0;
+        left:0;
+        border-bottom: 2px solid #0B1F38;
+        transition: 150ms ease-out;
+    }
+    .years_inner .year_right li:hover a::after{
+        width: 100%;
+    }
+    .years_inner .year_right strong{
+        font-size: 5rem;
+        font-weight: 900;
+        color:#f5a605;
+        float:right;
+        margin-top: 45px;
+        margin-right: 13.281%;
+    }
+    .years_inner .yearline{
+        position:absolute;
+        z-index: -1;
+        width: 118px;
+        height: 668px;
+        margin-top: 10px;
+        border-right: 2px solid #f0eae9;
+    }
+    .years_inner .yearline:before{
+        position:absolute;
+        top:0;
+        left:0;
+        content: '';
+        width: 100%;
+        height: 0;
+        z-index: -5;
+        border-right: 2px solid #99b5c2;
+    }
+    .years_inner .yearline.scrlReach:before{
+        animation: 500ms yearline ease-out forwards;
+    }
+    @keyframes yearline{
+        0%{
+            height: 0;
+        }
+        100%{
+            height: 100%;
+        }
+    }
+    
+    #racing{
+        height: 945px;
+        margin-top: 180px;
+    }
+    .race_pic{
+        height: 945px;
+    }
+    .race_right{
+        height: 945px;
+    }
+    .race_right h2{
+        color:#fff;
+        margin-top: 75px;
+        margin-left: 7.813%;
+        font-size: 5rem;
+        font-weight: 900;
+    }
+    .race_right .identity_wrap{
+        margin-left: 7.813%;
+        margin-top: 239px;
+        width: 92.187%;
+    }
+    .race_right .identity_wrap .race_identity{
+        width: 100%;
+    }
+    .race_right p{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        font-size: 2.4rem;
+        padding: 70px 7.813%;
+    }
+    
+    #future{
+        margin-top: 180px;
+    }
+    .future_inner h2{
+        font-size: 5rem;
+        font-weight: 900;
+        margin-bottom: 32px;
+    }
+    .future_inner strong{
+        display: block;
+        margin: 0 auto;
+        width: 84%;
+        font-size: 2.5rem;
+        line-height: 1.5;
+        margin-bottom: 110px;
+    }
+    .future_boxes{
+        display: flex;
+    }
+    .future_boxes>div{ /*회색박스*/
+        align-content: center;
+        width: 47.526%;
+        height: 365px;
+        background-color:#f0eae9;
+        margin-bottom: 0;
+        margin-right: 4.65%;
+        position:relative;
+        overflow: hidden;
+    }
+    .future_boxes>div:last-child{
+        margin-right: 0;
+    }
+    .future_boxes>div>*{ /*박스 안 모든요소*/
+        float:none;
+    }
+    .future_boxes>div>div{ /*박스 내 아이콘*/
+        margin: 58px auto 0;
+        width: 173px;
+        height: 125px;
+    }
+    .future_inner svg{
+        width: 100%;
+        height: 100%;
+    }
+    .future_inner svg>*{ /*svg 색상-굵기적용*/
+        stroke:#f5a605;
+        stroke-width: 1px;
+        fill:none;
+    }
+    .future_inner p{
+        font-size: 2rem;
+        width: 75%;
+        text-align: center;
+        margin: 50px auto 0;
+    }
+}
+
+@media all and (min-width:1024px){
+    #visual .visual_wrap{
+        width: 85%;
+    }
+    #visual .visual_wrap .sub{
+        padding-top: 362px;
+        width: 85%;
+    }
+
+    .intd_inner{
+        width: 89.746%;
+    }
+    .intd_inner h2 span{
+        left: 5.127%;
+    }
+    .intd_inner h2 span:last-child{
+        top: 170px;
+        right: 5.127%;
+    }
+    .intd_pic{
+        margin-top: 40px;
+    }
+    .intd_pic p{
+        width: 100%;
+        padding: 49px 5.127%;
+        font-size: 3rem;
+    }
+    
+    .years_inner h2{
+        font-size: 5rem;
+        margin-left: 5.127%;
+    }
+    .years_inner .year_right{
+        width: 100%;
+        height: 778px;
+        margin-top: 52px;
+        padding-left: 13.379%; /*137/1024*100*/
+    }
+    .years_inner .year_right li{
+        margin-bottom: 100px;
+    }
+    .years_inner .year_right li span{
+        font-size: 4rem;
+        font-weight: 900;
+        float:left;
+    }
+    .years_inner .year_right li span:after{
+        margin: 0 38px;
+        vertical-align: 5px;
+        border-radius: 50%;
+    }
+    .years_inner .year_right li a{
+        font-size: 3rem;
+        padding: 2px 0 12px 0;
+    }
+    .years_inner .year_right li a::after{
+        border-bottom: 2px solid #0B1F38;
+    }
+    .years_inner .year_right strong{
+        margin-top: 100px;
+        margin-right: 13.379%; 
+    }
+    .years_inner .yearline{
+        width: 142px;
+        height: 740px;
+        margin-top: 15px;
+    }
+    
+    #racing{
+        height: 1080px;
+        margin-top: 180px;
+    }
+    .race_pic{
+        height: 1080px;
+    }
+    .race_right{
+        height: 1080px;
+        overflow: hidden;
+    }
+    .race_right h2{
+        color:#fff;
+        margin-left: 5.127%;
+    }
+    .race_right .identity_wrap{
+        margin-left: 25.586%;
+        margin-top: 300px;
+        width: 92.187%;
+    }
+    .race_right p{
+        left: auto;
+        right:0;
+        width: 74.414%;
+        font-size: 2.5rem;
+        bottom: 0;
+        padding: 30px 5.127%;
+    }
+    
+    .future_inner{
+        width: 89.746%;
+        margin: 0 auto;
+    }
+    .future_inner h2{
+        margin-bottom: 58px;
+    }
+    .future_inner strong{
+        width: 100%;
+        font-size: 3rem;
+        margin-bottom: 110px;
+    }
+    .future_boxes>div{
+        width: 47.609%; /*438/*920*/
+        height: 438px;
+        margin-right: 4.674%; /*43/920*100*/
+    }
+    .future_boxes>div:last-child{
+        margin-right: 0;
+    }
+    .future_boxes>div>div{ /*박스 내 아이콘*/
+        margin-top: 70px;
+        width: 224px;
+        height: 148px;
+    }
+    .future_inner svg{
+        width: 100%;
+        height: 100%;
+    }
+    .future_inner svg>*{ /*svg 색상-굵기적용*/
+        stroke:#f5a605;
+        stroke-width: 1px;
+        fill:none;
+    }
+    .future_inner p{
+        font-size: 2.3rem;
+        margin-top: 90px;
+    }
+}
+
+@media all and (min-width:1300px){
+    #visual .sub{
+        width: 87.5%;
+    }
+
+    .intd_inner{
+        width: 87.5%;
+        height: 553px;
+    }
+    .intd_inner h2{
+        display: block;
+        height: 553px;
+        width: 100%;
+    }
+    .intd_inner h2 span{
+        display: block;
+        font-size: 30rem;
+        left: 6.25%; 
+    }
+    .intd_inner h2 span:last-child{
+        top: 306px;
+        right: 6.25%;
+    }
+    .intd_pic{
+        margin-top: -245px;
+        width: 57.5%; /*1104/1920*100*/
+    }
+    .intd_pic p{
+        width: 22vw;
+        font-size: 3rem;
+        margin-left: 64vw;
+        padding-top: 310px;
+        background-color: transparent;
+        backdrop-filter: none;
+        mix-blend-mode: normal;
+        color:#0b1f38;
+        padding-left:0;
+        padding-right:0;
+    }
+    
+    #years{
+        height:665px;
+    }
+    .years_inner .year_left{
+        width: 50%;
+        height: 665px;
+        float:left;
+    }
+    .years_inner h2{
+        font-size: 5rem;
+        float:right;
+        margin-top: 33px;
+    }
+    .years_inner .year_left .years_pic{
+        height: 537px;
+        float:left;
+    }
+    .years_inner .year_right{
+        float: left;
+        width: 50%;
+        height: 778px;
+        margin-top: 0;
+        padding-left: 6.667%; /*128/960*100*/ /*6.667*/
+    }
+    .years_inner .year_right li{
+        margin-bottom: 80px;
+    }
+    .years_inner .year_right li a.on:after{
+        border-bottom: 2px solid #0B1F38;
+        width:100%;
+    }
+    .years_inner .year_right li span{
+        font-size: 3rem;
+        font-weight: 900;
+        float:left;
+    }
+    .years_inner .year_right li span:after{
+        margin: 0 38px;
+        vertical-align: 5px;
+        border-radius: 50%;
+    }
+    .years_inner .year_right li a{
+        font-size: 2.5rem;
+        padding: 2px 0 12px 0;
+    }
+    .years_inner .year_right strong{
+        margin-top: 80px;
+        margin-right: 13.379%; 
+    }
+    .years_inner .yearline{
+        width: 118px;
+        height: 650px;
+        margin-top: 15px;
+    }
+    
+    #racing{
+        margin-top: 180px;
+    }
+    .race_pic{
+        float:left;
+        width: 50%;
+        height: 1080px;
+    }
+    .race_right{
+        position:static;
+        float: left;
+        width: 50%;
+        height: 1080px;
+        overflow: hidden;
+    }
+    .race_right h2{
+        color:#0B1F38;
+        margin-left: 13.333%;
+        margin-top: 72px;
+    }
+    .race_right .identity_wrap{
+        margin-left: 13.333%;
+        margin-top: 205px;
+        width: 92.187%;
+        height: 344px; /*344/1080*100*/
+    }
+    .race_right .identity_wrap .race_identity>*{
+        stroke: #f5a605;
+    }
+    .race_right p{
+        position:static;
+        color:#0B1F38;
+        margin-left: 13.333%;
+        margin-top: 180px;
+        width: 68.945%;
+        font-size: 2.5rem;
+        backdrop-filter: none;
+        background-color:transparent;
+        padding:0;
+    }
+    
+    .future_inner{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .future_inner h2{
+        margin-bottom: 58px;
+    }
+    .future_inner strong{
+        width: 100%;
+        font-size: 3rem;
+        margin-bottom: 117px;
+    }
+    .future_boxes{
+        display: block;
+    }
+    .future_boxes>div{
+        display: inline-block;
+        width: 462px; /*438/*920*/
+        height: 462px;
+        margin-right: 109px; /*43/920*100*/
+    }
+    .future_boxes>div:last-child{
+        margin-right: 0;
+    }
+    .future_boxes>div>div{ /*박스 내 아이콘*/
+        margin-top: 92px;
+    }
+    .future_inner p{
+        font-size: 2.5rem;
+        margin-top: 60px;
+    }
+}
+
+@media all and (min-width: 1600px){
+    .intd_pic p{
+        padding-top: 382px;
+    }
+    .years_inner .year_right li span{
+        font-size: 4rem;
+        font-weight: 900;
+        float:left;
+    }
+    .years_inner .year_right li a{
+        font-size: 3rem;
+        padding: 2px 0 12px 0;
+    }
+    .years_inner .yearline{
+        width: 142px;
+        height: 650px;
+        margin-top: 15px;
+    }
+}

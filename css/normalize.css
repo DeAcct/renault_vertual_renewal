@@ -34,10 +34,12 @@ body,h1,h2,h3,h4,h5,h6,button {
 }
 *::selection{
     background-color:#f5a605;
+    color:#fff;
 }
 
+
 article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+footer, header, hgroup, menu, nav, section, time {
 	display: block;
 }
 body {
@@ -76,4 +78,9 @@ button {
     overflow: hidden;
     width: 0;
     height: 0;
+}
+.clear:after {
+	content:"";
+	clear:both;
+	display:block;
 }

@@ -30,7 +30,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
 }
 
 .gnb{
-    display: none;/*jquery넣을때까지 임시적용*/
+    display: none;
     position:absolute;
     z-index: 10;
     top: 108px;
@@ -38,6 +38,10 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
     width: 100%;
     height: 100vh;
     background-color:rgba(255,255,255,0.98);
+    transition: 150ms ease-out;
+}
+.gnb.on{
+    display: block;
 }
 .gnb ul{
     padding: 49px 7%;
@@ -52,6 +56,11 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
 }
 .gnb ul li a{
     width: 100%;
+    color:#0b1f38;
+}
+.gnb ul li.current_page a{
+    color:#f5a605;
+    font-weight: 900;
 }
 
 .search{    
@@ -80,13 +89,15 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
 }
 
 .hamburger.open span:first-child{
-    transform: rotate(45deg) translateY(11px);
+    transform: rotate(45deg) translate(4px, 7px) scaleX(1.3);
+    margin-left: 2px;
 }
 .hamburger.open span:nth-child(2){
     display:none;
 }
 .hamburger.open span:last-child{
-    transform: rotate(-45deg) translateY(-11px);
+    transform: rotate(-45deg) translate(4px, -7px) scaleX(1.3);
+    margin-left: 2px;
 }
 
 .hamburger span:last-child{
@@ -118,10 +129,10 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
     width: 100%;
     height: 170px;
 }
-.identity .cls-1{
+.identity .visualLine{
     stroke-width: 2px;
     stroke: #fff;
-    fill:none;
+    fill:rgba(255,255,255,0);
 }
 
 #history{
@@ -140,7 +151,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
 .history_inner h2 a{
     display: inline;
 }
-.history_inner h2 a:after{
+.history_inner h2 a::after{
     display: inline-block;
     content:'';
     width: 14px;
@@ -241,7 +252,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
 .car_left h2 a{
     display: inline;
 }
-.car_left h2 a:after{
+.car_left h2 a::after{
     display: inline-block;
     content:'';
     width: 14px;
@@ -270,6 +281,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
     width: 100%;
     height: 40px;
     border-bottom: 1px solid #0B1F38;
+    transition: 150ms ease-out;
 }
 
 .car_left ul li a{
@@ -278,6 +290,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
     display: block;
     font-size: 1.2rem;
     line-height: 40px;
+    transition: 150ms ease-out;
 }
 .car_left ul li.on{
     /*선택됐을 시*/
@@ -298,10 +311,33 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
     position:relative;
 }
 .car_right .carImg{
+    opacity: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(../img/rn-car-zoe.jpg) center/cover;
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(../img/rn-car-1.jpg) center/cover;
     text-indent: -9999px;
+    position:relative;
+}
+
+.car_right .carImg.reach::after{
+    position:absolute;
+    top:0;
+    left:0;
+    content: '';
+    width: 0;
+    height: 100%;
+    background-color:#f0eae9;
+    animation: 700ms wipe1 forwards; 
+}
+.car_right .carImg.reach::before{
+    position:absolute;
+    top:0;
+    left:0;
+    content: '';
+    width: 0;
+    height: 100%;
+    background-color:#baaba9;
+    animation: 700ms wipe2 forwards;
 }
 .car_right .carSummery{ 
     position: absolute;
@@ -346,7 +382,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
 .media_inner h2 a{
     display: inline;
 }
-.media_inner h2 a:after{
+.media_inner h2 a::after{
     display: inline-block;
     content:'';
     width: 14px;
@@ -379,7 +415,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
     display: inline-block;
     font-size: 1.2rem;
 }
-.video b:after{
+.video b::after{
     display: inline-block;
     content:'';
     width: 12px;
@@ -408,7 +444,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
 .service_inner h2 a{
     display: inline;
 }
-.service_inner h2 a:after{
+.service_inner h2 a::after{
     display: inline-block;
     content:'';
     width: 14px;
@@ -429,7 +465,31 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
     height: 362px;
     width: 100%;
     background: url(../img/rn-service.jpg) center/cover;
+    position:relative;
+    opacity: 0;
 }
+.service_inner .banner.reach:after{
+    content:'';
+    background-color:#fff;
+    width: 0;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    left:0;
+    opacity:0;
+    animation: 1000ms wipe1 forwards;
+}
+.service_inner .banner.reach:before{
+    content:'';
+    background-color:#eee;
+    width: 0;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    left:0;
+    animation: 850ms wipe2 forwards;
+}
+
 .service_inner .banner h3{
     font-size: 1.8rem;
     font-weight: 900;
@@ -537,11 +597,11 @@ footer{
     }
     
     #visual{
-        height: 863px;
+        height: 864px;
     }
     .visual_wrap{
         width: 84.375%;
-        height: 863px;
+        height: 864px;
     }
     
     .history_inner{
@@ -577,7 +637,7 @@ footer{
     }
     .slider_wrap .slides{
         width: 1296px;
-        height: 239px;
+        height: 480px;
     }
     .slider_wrap .slides a{
         background: none;
@@ -651,7 +711,7 @@ footer{
         padding-top: 101px;
         font-size: 3rem;
     }
-    .car_left h2 a:after{
+    .car_left h2 a::after{
         width: 18px;
         height: 18px;
         margin-left: 26px;
@@ -682,6 +742,7 @@ footer{
         margin-right: 2.006%;/*13/648*100*/
         height: 74px;
         border-bottom: 2px solid #0B1F38;
+        transition: 150ms ease-out;
     }
     .car_left ul li a{
         width: 100%;
@@ -699,9 +760,12 @@ footer{
         height: 74px;
     }
     .car_left ul li.on a{
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: 900;
         /*폰트 강약조절*/
+    }
+    .car_left ul li:hover{
+        border-bottom-width: 6px;
     }
     .car_right{
         width: 100%;
@@ -717,7 +781,7 @@ footer{
     .car_right .carImg{
         width: 100%;
         height: 430px;
-        background: url(../img/rn-car-zoe.jpg) center/cover;
+        background: url(../img/rn-car-1.jpg) center/cover;
         position: absolute;
         top: -57px;
     }
@@ -763,12 +827,28 @@ footer{
     
     .media_inner{
         width: 84.375%;
+        height: 1435px;
+        position: relative;
+    }
+    .media_inner .bg{
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        right:0;
+        width: 668px;
+        height: 456px;
+        opacity:0;
+        background: url(../img/rn-news-bg.png) no-repeat center/cover;
+    }
+    .media_inner .bg.reach{
+        animation: 500ms toRight ease-out forwards;
     }
     .media_inner h2{
         font-size: 3rem;
-        padding-top: 180px;
+        margin-top: 180px;
+        padding: 0;
     }
-    .media_inner h2 a:after{
+    .media_inner h2 a::after{
         width: 18px;
         height: 18px;
         margin-left: 26px;
@@ -798,7 +878,7 @@ footer{
         padding-top:42px;
         font-size: 1.8rem;
     }
-    .video b:after{
+    .video b::after{
         vertical-align: -3px;
         margin-left: 15px;
     }
@@ -817,12 +897,10 @@ footer{
     .news.pc{
         display: block;
         margin-top: 114px;
-        height: 453px;
     }
     .newses{
         float: left;
         width: 29.321%;
-        height: 453px;
         margin-right: 6.019%;
     }
     .newses:last-child{
@@ -836,6 +914,7 @@ footer{
         background-position: center;
         background-repeat: no-repeat;
         position:relative;
+        opacity: 0;
     }
     .newses .news_img::before{
         position:absolute;
@@ -847,10 +926,22 @@ footer{
         top: 0;
         background-color:#f5a605;
         transition: 150ms ease-out;
+        opacity: 0;
+    }
+    .newses .news_img.reach::after{
+        position:absolute;
+        top:0;
+        left:0;
+        content: '';
+        width: 0;
+        height: 100%;
+        background-color:#fff;
+        animation: 700ms wipe1 forwards;
     }
     .newses .news_img:hover::before{
         top: 10px;
         left: 10px;
+        opacity:1;
     }
     .newses:nth-child(1) .news_img{
         background-image: url(../img/rn-news-globalenv.jpg);
@@ -886,13 +977,13 @@ footer{
         font-size: 1.5rem;
         padding-top: 25px;
     }
-
+    
     .service_inner h2{
         margin: 180px auto 0;
         font-size: 3rem;
         width: 84.375%;
     }
-    .service_inner h2 a:after{
+    .service_inner h2 a::after{
         width: 18px;
         height: 18px;
         margin-left: 26px;
@@ -911,7 +1002,7 @@ footer{
         width: 146px;
     }
     .service_inner .banner{
-        margin-top: 32px;
+        margin-top: 50px;
         height: 724px;
         width: 100%;
         background: url(../img/rn-service.jpg) center/cover;
@@ -929,6 +1020,11 @@ footer{
         width: 180px;
         height: 50px;
         line-height: 48px;
+        transition: 150ms ease-out;
+    }
+    .service_inner .banner .btn:hover{
+        background-color:#fff;
+        color:#0B1F38;
     }
     
     footer{
@@ -948,18 +1044,6 @@ footer{
         margin-right: 38px;
         margin-top: 72px;
     }
-    .footer_inner .sns li:nth-child(1){
-        background-image: url(../img/rn-sns-facebook.svg);
-    }
-    .footer_inner .sns li:nth-child(2){
-        background-image: url(../img/rn-sns-naverblog.svg);
-    }
-    .footer_inner .sns li:nth-child(3){
-        background-image: url(../img/rn-sns-instagram.svg);
-    }
-    .footer_inner .sns li:nth-child(4){
-        background-image: url(../img/rn-sns-youtube.svg);
-    }
 
     .footer_inner p{
         margin-top: 92px;
@@ -968,8 +1052,544 @@ footer{
     }
 }
 
+@media all and (min-width:1024px){
+    .mobile{
+        display: none;
+    }
+    
+    .logo{
+        float:left;
+        width: 154px;
+        height: 47px;
+        margin-top: 30px;
+        margin-left: 5.078%;
+    }
+    .header_inner{
+        height: 100%;
+    }
+    .gnb{
+        display: block;
+        position:static;
+        z-index: 105;
+        top:0;
+        margin-left: 50px;
+        float: left;
+        width: auto;
+        height: 100%;
+        background-color:transparent;
+    }
+    .gnb ul{
+        display: block;
+        padding:0;
+        width: auto;
+        height: 100%;
+    }
+    .gnb ul li{
+        display: inline-block;
+        height: 100%;
+        font-size: 1.8rem;
+        padding-bottom: 0;
+        width: 92px;
+        text-align: center;
+    }
+    .gnb ul li:last-child{
+        margin-right: 0;
+    }
+    .gnb ul li a{
+        width: 100%;
+        height: 100%;
+        line-height: 108px;
+    }
+    .gnb ul li a::after{
+        transition: 150ms ease-out;
+        content: '';
+        position:absolute;
+        right: auto;
+        left: 50%;
+        top:70px;
+        margin-left: -4px;
+        width: 8px;
+        height: 8px;
+        background-color:rgba(245, 166, 5, 0);
+        border-bottom: none;
+        border-radius: 50%;
+    }
+    .gnb ul li a:hover::after{
+        border-bottom: none;
+        background-color:rgba(245, 166, 5, 1);
+    }
+    
+    .search{    
+        float:right;
+        position: static;
+        margin-top: 39px;
+        margin-right: 5.078%;
+        width: 30px;
+        height: 30px;
+        background: url(../img/rn-icon-search.png) no-repeat;
+        background-size: contain;
+    }
+    
+    #visual{
+        height: 864px;
+        background: url(../img/rn-visual.jpg) center/cover;
+    }
+    .visual_wrap{
+        width: 89.746%;
+        height: 100%;
+    }
+    .visual_wrap h2{
+        text-indent: -9999px;
+        overflow: hidden;
+    }
+    
+    .history_inner{
+        width: 89.746%;
+    }
+    .slider_wrap{
+        margin-top: 126px;
+        height: 680px;
+        width: 95vw; /*972/1024*100*/
+    }
+    .slider_wrap .slides{
+        width: 1840px;
+        height: 680px;
+    }
+    .slider_wrap .slides a span{
+        color: #fff;
+        font-size: 5rem;
+    }
+    .slider_wrap .slides li:nth-child(2n+1){
+        width: 440px;
+        height: 580px;
+        margin-top: 50px;
+    }
+    .slider_wrap .slides li:nth-child(2n){
+        width: 480px;
+        height: 680px;
+    }
+    
+    #cars{
+        height: 1066px;
+        width: 100%;
+    }
+    .car_left{
+        float:left;
+        width: 50%;
+        height: 100%;
+        background-position: center;
+    }
+    .car_left .Mleft_inner{
+        margin: 0 auto;
+        width: 79.297%;
+    }
+    .car_left h2{
+        padding-top: 139px;
+    }
+    .car_left strong{
+        display: block;
+        padding-top: 199px;
+        font-size: 4.5rem;
+        line-height: 1.5;
+    }
+    .car_left strong .line_break{
+        display: block;
+    }
+    .car_left ul{
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-top: 208px;
+    }
+    .car_left ul li{
+        display: block;
+        float: left;
+        width: 46.084%; /*153/332*100*/
+        margin-right: 7.229%; /*24/332*100*/
+        height: 75px;
+    }
+    .car_left ul li:nth-child(2n){
+        margin-right: 0;
+    }
+    
+    .car_right{
+        float: left;
+        width: 50%;
+        height: 100%;
+    }
+    .car_right .carslide{
+        width: 79.297%;
+        margin: 0 auto;
+        position:static;
+    }
+    .car_right .carImg{
+        width: 400px;
+        height: 500px;
+        position: relative;
+        margin: 134px auto 0;
+    }
+    .car_right .carSummery{ 
+        position: static;
+        float:none;
+        padding-top: 72px;
+        text-align: center;
+    }
+    .car_right .carSummery .c_name{
+        font-size: 4rem;
+        font-weight: 900;
+        color:#0B1F38;
+        padding-bottom: 47px;
+    }
+    .car_right .carSummery .c_title{
+        padding-bottom: 23px;
+        display: block;
+        font-size: 2.2rem;
+        color:#0B1F38;
+    }
+    .car_right .carSummery .c_summery{
+        color:#0B1F38;
+        font-size: 2rem;
+    }
+    .car_right .carslide .btn{
+        position:relative;
+        float:none;
+        display: block;
+        margin: 46px auto 0;
+        font-size: 1.7rem;
+    }
+    
+    .media_inner{
+        width: 89.746%;
+        height: 1820px;
+        position: relative;
+    }
+    .media_inner .bg{
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        right:0;
+        width: 761px;
+        height: 521px;
+        background: url(../img/rn-news-bg.png) no-repeat center/cover;
+    }
+    .media_inner .video{
+        width: 100%;
+        padding-top: 65px;
+    }
+    .media_inner .video .youtube_area{
+        width: 100%;
+        height: 680px;
+    }
+    .video b{
+        padding-top:34px;
+    }
+    .newses .news_img{
+        height: 380px;
+    }
+    
+    .service_inner h2{
+        width: 89.746%;
+    }
+    .service_inner .banner{
+        margin-top: 57px;
+    }
+    .service_inner .banner h3{
+        font-size: 5rem;
+        padding-top: 290px;
+    }
+    .service_inner .banner .btn{
+        margin-top: 60px;
+        font-size: 2rem;
+    }
+    
+    .footer_inner{
+        width: 89.746%;
+    }
 
+}
 
+@media all and (min-width:1300px){
+    .logo{
+        width: 138px;
+        height: 43px;
+        margin-top: 32px;
+        margin-left: 6.25%; /*120/1920*100*/
+    }
+    .header_inner{
+        height: 100%;
+    }
+    .gnb{
+        display: block;
+        margin-left: 74px;
+    }
+    .gnb ul li a{
+        width: 100%;
+        height: 100%;
+        line-height: 108px;
+    }
+    
+    .search{
+        margin-right: 6.25%;
+    }
+    
+    #visual{
+        height: 864px;
+    }
+    .visual_wrap{
+        width: 1153px;
+        height: 100%;
+    }
+    
+    .history_inner{
+        width: 87.5%; /*1680/1920*100*/
+    }
+    .slider_wrap{
+        margin-top: 126px;
+        height: 800px;
+        width: 95vw; /*972/1024*100*/
+    }
+    .slider_wrap .slides{
+        width: 2160px;
+        height: 800px; /*560+520*2*/
+    }
+    .slider_wrap .slides a span{
+        color: #fff;
+        font-size: 5rem;
+    }
+    .slider_wrap .slides li:nth-child(2n+1){
+        width: 520px;
+        height: 680px;
+        margin-top: 60px;
+    }
+    .slider_wrap .slides li:nth-child(2n){
+        width: 560px;
+        height: 800px;
+    }
+    
+    #cars{
+        height: 1066px;
+        width: 100%;
+    }
+    .car_left{
+        float:left;
+        width: 50%;
+        height: 100%;
+        background-position: center;
+    }
+    .car_left .Mleft_inner{
+        margin: 0 auto;
+        width: 75%;
+    }
+    .car_left strong{
+        padding-top: 257px;
+        font-size: 5rem;
+        line-height: 1.4;
+    }
+    .car_left ul{
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-top: 208px;
+    }
+    .car_left ul li{
+        display: block;
+        float: left;
+        width: 21.25%; /*153/720*100*/
+        margin-right: 3.333%; /*24/720*100*/
+        height: 75px;
+    }
+    .car_left ul li:nth-child(2n){
+        margin-right: 3.333%;
+    }
+    .car_left ul li:last-child{
+        margin-right: 0;
+    }
+    
+    .car_right{
+        float: left;
+        width: 50%;
+        height: 100%;
+    }
+    .car_right .carslide{
+        width: 79.297%;
+        margin: 0 auto;
+        position:static;
+    }
+    .car_right .carImg{
+        width: 430px;
+        height: 530px;
+        margin: 120px auto 0;
+    }
+    .car_right .carSummery{ 
+        position: static;
+        float:none;
+        padding-top: 72px;
+        text-align: center;
+    }
+    .car_right .carslide .btn{
+        margin-top: 44px;
+        font-size: 2rem;
+    }
+    
+    .media_inner{
+        max-width: 1680px;
+        width: 87.5%; /*1680*/
+        height: 838px;
+        position: relative;
+        
+    }
+    .media_inner .bg{
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        right:0;
+        width: 668px;
+        height: 456px;
+        background: url(../img/rn-news-bg.png) no-repeat center/cover;
+    }
+        
+    .media_inner .video{
+        float:left;
+        width: 40.476%; /*680/1680*100*/
+        padding:0;
+        margin-top: 61px;
+        margin-right: 4.583%;
+    }
+    .media_inner .video .youtube_area{
+        width: 100%;
+        height: 510px;
+    }
+    .video h3{
+        font-size: 4.4rem;
+    }
+    
+    .news.pc{
+        float:right;
+        margin-top: 61px;
+        width: 54.226%; /*911/1680*100*/
+    }
+    .newses{
+        float: left;
+        width: 29.638%; /*270/911*100*/
+        margin-right: 5.269%;
+    }
+    .newses:last-child{
+        margin: 0;
+    }
+    .newses .news_img{
+        width: 100%;
+        height: 380px;
+        text-indent: -9999px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position:relative;
+    }
+    .newses .news_img::before{
+        position:absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        content: '';
+        left: 0;
+        top: 0;
+        background-color:#f5a605;
+        transition: 150ms ease-out;
+    }
+    .newses .news_img:hover::before{
+        top: 10px;
+        left: 10px;
+    }
+    .newses:nth-child(1) .news_img{
+        background-image: url(../img/rn-news-globalenv.jpg);
+    }
+    .newses:nth-child(2) .news_img{
+        background-image: url(../img/rn-news-zoerelease.jpg);
+    }
+    .newses:nth-child(3) .news_img{
+        background-image: url(../img/rn-news-masterrelease.jpg);
+    }
+    .newses b{
+        font-size: 1.5rem;
+        display: inline-block;
+        margin-top: 21px;
+    }
+    .newses h3{
+        line-height: 28px;
+        font-size: 1.8rem;
+        font-weight: 900;
+        padding-top: 26px;
+    }
+    .newses p{
+        font-size: 1.2rem;
+        padding-top: 35px;
+    }
+    
+    .service_inner h2{
+        width: 87.5%;
+    }
+    .service_inner .banner{
+        width: 87.5%;
+        margin: 60px auto 0
+    }
+    .service_inner .banner h3{
+        font-size: 5rem;
+        padding-top: 290px;
+    }
+    .service_inner .banner .btn{
+        margin-top: 56px;
+        font-size: 2rem;
+    }
+    
+    footer{
+        border-top: 2px solid #f0eae9;
+        margin-top: 125px;
+    }
+    .footer_inner{
+        width: 87.5%;
+    }
+}
 
+@media all and (min-width:2450px){
+    .main_wrap .next,
+    .main_wrap .prev{
+        display: none;
+    /*모바일에서는 이전다음버튼 불필요*/
+    }
+}
 
-
+@keyframes toRight{
+    0%{
+        right: 100vw;
+    }
+    100%{
+        right: 0;
+    }
+}
+@keyframes wipe1{
+    0%{
+        width: 100%;
+    }
+    49%{
+        opacity:1;
+    }
+    50%{
+        width: 0;
+        opacity:0;
+    }
+}
+@keyframes wipe2{
+    0%{
+        width: 100%;
+    }
+    30%{
+        width: 100%;
+    }
+    79%{
+        opacity:1;
+    }
+    80%{
+        width: 0;
+        opacity:0;
+    }
+}
