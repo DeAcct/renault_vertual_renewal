@@ -2,6 +2,7 @@
 
 /*폰트 불러오기*/
 @import url(http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -28,7 +29,7 @@ html{
     font-size: 0.625em;
 }
 body,h1,h2,h3,h4,h5,h6,button {
-	font-family:"Spoqa Han Sans", "돋움", dotum, sans-serif;
+	font-family:"Spoqa Han Sans", "Noto Sans KR", "돋움", dotum, sans-serif;
 	line-height:1;
     color:#0B1F38;
 }
