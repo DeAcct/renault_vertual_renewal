@@ -10,7 +10,7 @@
     text-indent: 0;
     padding-top: 162px;
     font-size: 6rem;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 #introduce{
@@ -37,7 +37,7 @@
 }
 .intd_inner h2 span{
     font-size: 7.5rem;
-    font-weight: 900;
+    font-weight: 700;
     position:absolute;
     left: 8.5%;
 }
@@ -75,7 +75,7 @@
 
 .years_inner h2{
     font-size: 2.5rem;
-    font-weight: 900;
+    font-weight: 700;
     margin-left: 8.5%;
 }
 .years_inner .year_left .years_pic{
@@ -97,7 +97,7 @@
 }
 .years_inner .year_right li span{
     font-size: 1.5rem;
-    font-weight: 900;
+    font-weight: 700;
 }
 .years_inner .year_right li a{
     font-size: 1.2rem;
@@ -105,7 +105,7 @@
 }
 .years_inner .year_right strong{
     font-size: 2.5rem;
-    font-weight: 900;
+    font-weight: 700;
     color:#f5a605;
     float:right;
     margin-top: 45px;
@@ -134,7 +134,7 @@
     margin-top: 39px;
     margin-left: 8.5%;
     font-size: 2.5rem;
-    font-weight: 900;
+    font-weight: 700;
 }
 .race_right .identity_wrap{
     margin-left: 8.5%;
@@ -172,7 +172,7 @@
 }
 .future_inner h2{
     font-size: 2.5rem;
-    font-weight: 900;
+    font-weight: 700;
     margin-bottom: 17px;
 }
 .future_inner strong{
@@ -287,7 +287,7 @@
     }
     .years_inner .year_right li span{
         font-size: 3rem;
-        font-weight: 900;
+        font-weight: 700;
         float:left;
     }
     .years_inner .year_right li span:after{
@@ -321,7 +321,7 @@
     }
     .years_inner .year_right strong{
         font-size: 5rem;
-        font-weight: 900;
+        font-weight: 700;
         color:#f5a605;
         float:right;
         margin-top: 45px;
@@ -372,7 +372,7 @@
         margin-top: 75px;
         margin-left: 7.813%;
         font-size: 5rem;
-        font-weight: 900;
+        font-weight: 700;
     }
     .race_right .identity_wrap{
         margin-left: 7.813%;
@@ -395,7 +395,7 @@
     }
     .future_inner h2{
         font-size: 5rem;
-        font-weight: 900;
+        font-weight: 700;
         margin-bottom: 32px;
     }
     .future_inner strong{
@@ -490,7 +490,7 @@
     }
     .years_inner .year_right li span{
         font-size: 4rem;
-        font-weight: 900;
+        font-weight: 700;
         float:left;
     }
     .years_inner .year_right li span:after{
@@ -657,7 +657,7 @@
     }
     .years_inner .year_right li span{
         font-size: 3rem;
-        font-weight: 900;
+        font-weight: 700;
         float:left;
     }
     .years_inner .year_right li span:after{
@@ -759,7 +759,7 @@
     }
     .years_inner .year_right li span{
         font-size: 4rem;
-        font-weight: 900;
+        font-weight: 700;
         float:left;
     }
     .years_inner .year_right li a{

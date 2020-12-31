@@ -60,7 +60,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
 }
 .gnb ul li.current_page a{
     color:#f5a605;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .search{    
@@ -298,7 +298,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
 }
 .car_left ul li.on a{
     font-size: 2rem;
-    font-weight: 900;
+    font-weight: 700;
     /*폰트 강약조절*/
 }
 .car_right{
@@ -346,7 +346,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
 }
 .car_right .carSummery .c_name{
     font-size: 1.8rem;
-    font-weight: 900;
+    font-weight: 700;
     /*폰트 강약조절*/
     
     color:#fff;
@@ -426,7 +426,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
 }
 .video h3{
     font-size: 2.2rem;
-    font-weight: 900;
+    font-weight: 700;
     /*폰트 강약조절*/
     
     padding-top: 15px;
@@ -492,7 +492,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
 
 .service_inner .banner h3{
     font-size: 1.8rem;
-    font-weight: 900;
+    font-weight: 700;
     color:#fff;
     text-align: center;
     padding-top: 158px;
@@ -761,7 +761,7 @@ footer{
     }
     .car_left ul li.on a{
         font-size: 3rem;
-        font-weight: 900;
+        font-weight: 700;
         /*폰트 강약조절*/
     }
     .car_left ul li:hover{
@@ -792,7 +792,7 @@ footer{
     }
     .car_right .carSummery .c_name{
         font-size: 3.5rem;
-        font-weight: 900;
+        font-weight: 700;
         color:#0B1F38;
         padding-bottom: 24px;
     }
@@ -884,7 +884,7 @@ footer{
     }
     .video h3{
         font-size: 4.3rem;
-        font-weight: 900;
+        font-weight: 700;
         /*폰트 강약조절*/
 
         padding-top: 37px;
@@ -970,7 +970,7 @@ footer{
     .newses h3{
         line-height: 28px;
         font-size: 2rem;
-        font-weight: 900;
+        font-weight: 700;
         padding-top: 10px;
     }
     .newses p{
@@ -1236,7 +1236,7 @@ footer{
     }
     .car_right .carSummery .c_name{
         font-size: 4rem;
-        font-weight: 900;
+        font-weight: 700;
         color:#0B1F38;
         padding-bottom: 47px;
     }
@@ -1517,7 +1517,7 @@ footer{
     .newses h3{
         line-height: 28px;
         font-size: 1.8rem;
-        font-weight: 900;
+        font-weight: 700;
         padding-top: 26px;
     }
     .newses p{
