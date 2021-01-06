@@ -7,6 +7,9 @@
     <link href="css/stylesheet.css" rel="stylesheet">
     <link href="css/sub.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+    <script src="js/sub.js"></script>
     <title>르노</title>
 </head>
 <body>
@@ -22,7 +25,7 @@
                     <li><a href="#">미디어</a></li>
                 </ul>
             </nav>
-        
+             
             <button class="search blind">검색</button>
         
             <button class="hamburger mobile">
@@ -67,7 +70,7 @@
                             <li><span>1984</span><a href="#">세계 최초의 MPV, 에스파스</a></li>
                             <li><span>2010</span><a href="#">디자인의 새로운 전성기, 드지르 컨셉카</a></li>
                         </ul>
-                        <strong>122 years</strong>
+                        <strong><span>YYYY</span> years</strong>
                     </div>
                 </div>
             </section>
@@ -78,7 +81,7 @@
                     <div class="race_right">
                         <h2>레이싱</h2>
                         <div class="identity_wrap">
-                            <svg viewBox="0 0 838 340" class="race_identity">
+                            <svg viewBox="0 0 838 340" id="race_identity">
                                 <path class="cls-1" d="M25,269.61s-3.75.22-6.72,7.81-3.68,15.63-6.38,19.26-10.07,3.25-9.69,7.93c1.32,16.39,74,17.83,74,17.83l108.63-1.66v-7.26" transform="translate(-0.66 -1.98)"/>
                                 <path class="cls-1" d="M835.16,293.13l-463.75,16.1c11.44-24.21,18-74,6.6-105.21-31.69-72.64-127.22-89.37-181.81-33s-11.44,142.52-11.44,142.52-45.35,2.09-95.31.11-66-12.1-68.79-17.06c0,0-2.31-6.49,0-9.13,0,0,46.56,4.62,68.79-10.57s46-81.66,68.89-103.23,56.79-58.55,116.22-58.55,96,14.53,125,42.7,76.6,90.69,109.62,96.85,198.54-15.41,198.54-15.41" transform="translate(-0.66 -1.98)"/>
                                 <path class="cls-1" d="M20.66,287.44s-.16-17.34,7.43-27.32C24.38,231,42.78,188.39,42.78,188.39s8.92-23.44,73-41.93a819.4,819.4,0,0,1,117.42-24.8" transform="translate(-0.66 -1.98)"/>
@@ -115,7 +118,7 @@
                     <div class="future_boxes">
                         <div>
                             <div class="env_icon">
-                                <svg viewBox="0 0 37 37">
+                                <svg id="env" viewBox="0 0 37 37">
                                     <path class="st0" d="M18.5,36.5c-9.9,0-18-8.1-18-18c0-4.8,1.9-9.4,5.3-12.7"/>
                                     <polyline class="st0" points="0.5,5.5 6.5,5.5 6.5,11.5 "/>
                                     <path class="st0" d="M18.5,0.5c9.9,0,18,8.1,18,18c0,4.8-1.9,9.4-5.3,12.7"/>
@@ -128,7 +131,7 @@
                         </div>
                         <div>
                             <div class="sustain_icon">
-                                <svg viewBox="0 0 56 32">
+                                <svg id="sustain" viewBox="0 0 56 32">
                                     <path class="st0" d="M44.5,27.5h3h8c0-6.6-5.4-12-12-12l-11-12"/>
                                     <polyline class="st0" points="17.5,27.5 31.5,27.5 36.5,27.5 "/>
                                     <path class="st0" d="M17.5,3.5c-6.1,0-11,4.9-11,11c0,0.1,0,0.2,0,0.3c-0.5-0.2-1-0.3-1.5-0.3c-2.3,0-4.2,1.8-4.5,4l0,0v9h9"/>

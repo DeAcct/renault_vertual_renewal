@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+/*sub1*/
 #visual{
     background: url(../img/rn-visual-sub1.jpg) no-repeat center/cover;
 }
@@ -25,12 +26,17 @@
 .intd_bg{
     width: 100%;
     height: 346px;
-    transform: skewY(10deg);
     background-color:#f5a605;
     position:absolute;
     top: 50px;
     z-index: -1;
+    transition: 150ms ease-out;
+    opacity: 0;
 }
+.intd_bg.reach{
+    animation: 450ms intdBg forwards;
+}
+
 .intd_inner h2{
     display: block;
     height: 164px;
@@ -80,9 +86,10 @@
 }
 .years_inner .year_left .years_pic{
     margin-top: 25px;
-    background: url(../img/rn-sub1-history.jpg) no-repeat center/cover;
+    background: url(../img/rn-sub1-history-1.jpg) no-repeat center/cover;
     width: 100%;
     height: 286px;/*572*/
+    transition: 150ms ease-out;
 }
 .years_inner .year_right{
     width: 84%;
@@ -102,6 +109,7 @@
 .years_inner .year_right li a{
     font-size: 1.2rem;
     padding-top: 20px;
+    cursor: default;
 }
 .years_inner .year_right strong{
     font-size: 2.5rem;
@@ -141,11 +149,11 @@
     margin-top: 32px;
     width: 91.5%;
 }
-.race_right .identity_wrap .race_identity{
+.race_right .identity_wrap #race_identity{
     width: 100%;
     height:100%;
 }
-.race_right .race_identity>*{
+.race_right #race_identity>*{
     fill:none;
     stroke: #fff;
     stroke-width: 3px;
@@ -219,6 +227,7 @@
 }
 
 @media all and (min-width:768px){
+    /*sub1*/
     #visual .sub{
         padding-top: 324px;
         font-size: 12rem;
@@ -316,9 +325,6 @@
         border-bottom: 2px solid #0B1F38;
         transition: 150ms ease-out;
     }
-    .years_inner .year_right li:hover a::after{
-        width: 100%;
-    }
     .years_inner .year_right strong{
         font-size: 5rem;
         font-weight: 700;
@@ -345,8 +351,8 @@
         z-index: -5;
         border-right: 2px solid #99b5c2;
     }
-    .years_inner .yearline.scrlReach:before{
-        animation: 500ms yearline ease-out forwards;
+    .years_inner .yearline.reach:before{
+        animation: 1s yearline ease-out forwards;
     }
     @keyframes yearline{
         0%{
@@ -379,7 +385,7 @@
         margin-top: 239px;
         width: 92.187%;
     }
-    .race_right .identity_wrap .race_identity{
+    .race_right .identity_wrap #race_identity{
         width: 100%;
     }
     .race_right p{
@@ -448,6 +454,7 @@
 }
 
 @media all and (min-width:1024px){
+    /*sub1*/
     #visual .visual_wrap{
         width: 85%;
     }
@@ -501,9 +508,6 @@
     .years_inner .year_right li a{
         font-size: 3rem;
         padding: 2px 0 12px 0;
-    }
-    .years_inner .year_right li a::after{
-        border-bottom: 2px solid #0B1F38;
     }
     .years_inner .year_right strong{
         margin-top: 100px;
@@ -585,6 +589,7 @@
 }
 
 @media all and (min-width:1300px){
+    /*sub1*/
     #visual .sub{
         width: 87.5%;
     }
@@ -668,6 +673,7 @@
     .years_inner .year_right li a{
         font-size: 2.5rem;
         padding: 2px 0 12px 0;
+        cursor: pointer;
     }
     .years_inner .year_right strong{
         margin-top: 80px;
@@ -705,7 +711,7 @@
         width: 92.187%;
         height: 344px; /*344/1080*100*/
     }
-    .race_right .identity_wrap .race_identity>*{
+    .race_right .identity_wrap #race_identity>*{
         stroke: #f5a605;
     }
     .race_right p{
@@ -754,6 +760,7 @@
 }
 
 @media all and (min-width: 1600px){
+    /*sub1*/
     .intd_pic p{
         padding-top: 382px;
     }
@@ -770,5 +777,18 @@
         width: 142px;
         height: 650px;
         margin-top: 15px;
+    }
+}
+
+@keyframes intdBg{
+    0%{
+        width: 0%;
+    }
+    50%{
+        width: 100%;
+        transform: skewY(0);
+    }
+    100%{
+        transform: skewY(10deg);
     }
 }

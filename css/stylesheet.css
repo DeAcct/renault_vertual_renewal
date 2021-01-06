@@ -9,12 +9,10 @@ header{
     top:0;
     width: 100%;
     height: 108px;
-    background-color:#fff;
+    background-color:rgba(255,255,255,0.95);
     z-index:100;
-    box-shadow: 0 7px 15px rgba(0,0,0,0.3);
-}
-header.active{ /*스크롤이 멈출 때 숨는경우*/
-    top: -108px;   
+    transition: 300ms ease-out;
+    backdrop-filter:blur(10px);
 }
 
 .logo{
@@ -30,7 +28,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
 }
 
 .gnb{
-    display: none;
+    margin-left:-9999px;
     position:absolute;
     z-index: 10;
     top: 108px;
@@ -38,10 +36,9 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
     width: 100%;
     height: 100vh;
     background-color:rgba(255,255,255,0.98);
-    transition: 150ms ease-out;
 }
 .gnb.on{
-    display: block;
+    margin-left:0;
 }
 .gnb ul{
     padding: 49px 7%;
@@ -117,6 +114,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
     width: 84%;
     height: 377px;
     margin:0 auto;
+    transition: 150ms ease-out;
 }
 .visual_wrap h2{
     text-indent: -9999px;
@@ -143,6 +141,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
 .history_inner{
     width: 84%;
     margin: 0 auto;
+    transition: 150ms ease-out;
 }
 .history_inner h2{
     padding-top: 90px;
@@ -169,10 +168,8 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
 }
 .slider_wrap{
     margin-top: 32px;
-    position: relative;
-    width: 92vw;
-    height: 239px;
-    overflow: scroll;
+    width: 100%;
+    height: auto;
     margin-bottom: 90px;
     /*
     스크롤바는 768부터 사라짐, 
@@ -180,17 +177,19 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
     */
 }
 .slider_wrap .slides{
-    position:absolute;
     vertical-align: middle;
-    width: 700px;
-    height: 239px;
-    left: 0;
-    top: 0;
+    width: 100%;
 }
 .slider_wrap .slides li{
-    float:left;
     background-position: center;
     background-size: cover;
+    width: 100%;
+    height: 239px;
+    display: block;
+    margin-bottom: 20px;
+}
+.slider_wrap .slides li:last-child{
+    margin: 0;
 }
 .slider_wrap .slides a{
     position:relative;
@@ -205,27 +204,13 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
     color:#fff;
     font-size: 1.8rem;
 }
-.slider_wrap .slides li:nth-child(2n+1){
-    display: block;
-    width: 156px;
-    height: 204px;
-    margin-top: 18px;
-}
-.slider_wrap .slides li:nth-child(2n){
-    display: block;
-    width: 178px;
-    height: 239px;
-}
 .slider_wrap .slides li:nth-child(1){
-    background-image: url(../img/rn-history-renault.jpg);
-}
-.slider_wrap .slides li:nth-child(2){
     background-image: url(../img/rn-history-history.jpg);
 }
-.slider_wrap .slides li:nth-child(3){
+.slider_wrap .slides li:nth-child(2){
     background-image: url(../img/rn-history-racing.jpg);
 }
-.slider_wrap .slides li:nth-child(4){
+.slider_wrap .slides li:nth-child(3){
     background-image: url(../img/rn-history-future.jpg);
 }
 .main_wrap .next,
@@ -317,6 +302,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
     background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(../img/rn-car-1.jpg) center/cover;
     text-indent: -9999px;
     position:relative;
+    transition: 150ms ease-out;
 }
 
 .car_right .carImg.reach::after{
@@ -351,16 +337,19 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
     
     color:#fff;
     padding-bottom: 10px;
+    transition: 150ms ease-out;
 }
 .car_right .carSummery .c_title{
     padding-bottom: 10px;
     display: block;
     font-size: 1.4rem;
     color:#fff;
+    transition: 150ms ease-out;
 }
 .car_right .carSummery .c_summery{
     color:#fff;
     font-size: 1.2rem;
+    transition: 150ms ease-out;
 }
 .car_right .carslide .btn{
     position:absolute;
@@ -374,6 +363,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
 .media_inner{
     width: 84%;
     margin: 0 auto;
+    transition: 150ms ease-out;
 }
 .media_inner h2{
     padding-top: 90px;
@@ -467,6 +457,7 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
     background: url(../img/rn-service.jpg) center/cover;
     position:relative;
     opacity: 0;
+    transition: 150ms ease-out;
 }
 .service_inner .banner.reach:after{
     content:'';
@@ -476,7 +467,6 @@ header.active{ /*스크롤이 멈출 때 숨는경우*/
     position:absolute;
     top: 0;
     left:0;
-    opacity:0;
     animation: 1000ms wipe1 forwards;
 }
 .service_inner .banner.reach:before{
@@ -605,11 +595,12 @@ footer{
     }
     
     .history_inner{
-        width: 84.375%;
+        width: 100%;
     }
     .history_inner h2{
         padding-top: 180px;
         font-size: 3rem;
+        margin-left: 7.813%;
     }
     .history_inner h2 a::after{
         width: 18px;
@@ -631,12 +622,12 @@ footer{
     }
     .slider_wrap{
         margin-top: 73px;
+        width: 100%;
         height: 480px;
-        overflow: hidden;
         margin-bottom: 180px;
     }
     .slider_wrap .slides{
-        width: 1296px;
+        width: 100%;
         height: 480px;
     }
     .slider_wrap .slides a{
@@ -646,8 +637,16 @@ footer{
         height: 100%;
     }
     .slider_wrap .slides li{
-        overflow: hidden;
+        float: left;
         transition: 150ms ease-out;
+        width: 33.333%;
+    }
+    .slider_wrap .slides li:nth-child(2n+1){
+        height: 480px;
+    }
+    .slider_wrap .slides li:nth-child(2n){
+        height: 408px;
+        margin-top: 36px;
     }
     .slider_wrap .slides li:hover a{
         background-color: rgba(0,0,0,0.5);
@@ -667,15 +666,6 @@ footer{
     }
     .slider_wrap .slides li:hover span{
         opacity:1;
-    }
-    .slider_wrap .slides li:nth-child(2n+1){
-        width: 312px;
-        height: 408px;
-        margin-top: 36px;
-    }
-    .slider_wrap .slides li:nth-child(2n){
-        width: 336px;
-        height: 480px;
     }
     
     #history{
@@ -915,6 +905,7 @@ footer{
         background-repeat: no-repeat;
         position:relative;
         opacity: 0;
+        transition: 150ms ease-out;
     }
     .newses .news_img::before{
         position:absolute;
@@ -1067,7 +1058,7 @@ footer{
     .header_inner{
         height: 100%;
     }
-    .gnb{
+    .header_inner .gnb{
         display: block;
         position:static;
         z-index: 105;
@@ -1140,32 +1131,35 @@ footer{
     }
     .visual_wrap h2{
         text-indent: -9999px;
-        overflow: hidden;
     }
     
     .history_inner{
-        width: 89.746%;
+        width: 100%;
+    }
+    .history_inner h2{
+        margin-left:  5.078%;
     }
     .slider_wrap{
         margin-top: 126px;
         height: 680px;
-        width: 95vw; /*972/1024*100*/
+        width: 100%; /*972/1024*100*/
     }
     .slider_wrap .slides{
-        width: 1840px;
+        width: 100%;
         height: 680px;
     }
     .slider_wrap .slides a span{
         color: #fff;
         font-size: 5rem;
     }
-    .slider_wrap .slides li:nth-child(2n+1){
-        width: 440px;
+    .slider_wrap .slides li{
+        width: 33.333%;
+    }
+    .slider_wrap .slides li:nth-child(2n){
         height: 580px;
         margin-top: 50px;
     }
-    .slider_wrap .slides li:nth-child(2n){
-        width: 480px;
+    .slider_wrap .slides li:nth-child(2n+1){
         height: 680px;
     }
     
@@ -1318,7 +1312,7 @@ footer{
     .header_inner{
         height: 100%;
     }
-    .gnb{
+    .header_inner .gnb{
         display: block;
         margin-left: 74px;
     }
@@ -1341,29 +1335,35 @@ footer{
     }
     
     .history_inner{
-        width: 87.5%; /*1680/1920*100*/
+        width: 87.5%; 
+        max-width: 1680px;
+        /*1680/1920*100*/
+    }
+    .history_inner h2 {
+        margin-left: 0;
     }
     .slider_wrap{
         margin-top: 126px;
-        height: 800px;
-        width: 95vw; /*972/1024*100*/
+        height:700px;
+        width: 100%; /*972/1024*100*/
     }
     .slider_wrap .slides{
-        width: 2160px;
-        height: 800px; /*560+520*2*/
+        width: 100%;
+        height: 700px; /*560+520*2*/
     }
     .slider_wrap .slides a span{
         color: #fff;
         font-size: 5rem;
     }
-    .slider_wrap .slides li:nth-child(2n+1){
-        width: 520px;
-        height: 680px;
-        margin-top: 60px;
+    .slider_wrap .slides li{
+        width: 33.333%;
     }
     .slider_wrap .slides li:nth-child(2n){
-        width: 560px;
-        height: 800px;
+        height: 580px;
+        margin-top: 60px;
+    }
+    .slider_wrap .slides li:nth-child(2n+1){
+        height: 700px;
     }
     
     #cars{
