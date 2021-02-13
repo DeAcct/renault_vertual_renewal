@@ -11,6 +11,8 @@ $(function(){
     var masterPic = $('#master .picture');
     var autosolution = $('.autosol_cont div');
     var autosolText = autosolution.find('h3');
+    var tableOpenBtn = $('.open_table');
+    var table = $('.maint_table')
     var nowYear = new Date().getFullYear();
     var years = nowYear-1891;
     var yearElement = $('.years_inner .year_right strong')
@@ -20,6 +22,7 @@ $(function(){
         deviceWidth = Window.innerWidth();
     })
 
+    /*location 요청관련 CTA 개발 필요*/
     function success(pos) {
         crd = pos.coords;
         lati = crd.latitude;/*위도*/ 
@@ -33,7 +36,7 @@ $(function(){
         var map = new kakao.maps.Map(container, options);
     };
     function error(err) {
-        console.warn('위치를 불러오는 중 문제가 생겼습니다.');
+        alert('위치를 불러오는 중 문제가 생겼습니다.');
     };
     var options = {
         enableHighAccuracy: true,
@@ -41,7 +44,7 @@ $(function(){
         maximumAge: 0
     };
     navigator.geolocation.getCurrentPosition(success, error, options)
-    
+    /*기본 위도는 37.335887 경도126.584063(서울시청)으로 설정*/
     
     yearElement.find('span').text(years);
     
@@ -114,6 +117,16 @@ $(function(){
         }
         else{
             return false;
+        }
+    })
+
+    tableOpenBtn.click(function(){
+        table.toggleClass('open');
+        if (table.hasClass('open')){
+            $(this).find('span').text('표 접기');
+        }
+        else{
+            $(this).find('span').text('표 펼치기');
         }
     })
 })

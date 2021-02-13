@@ -481,21 +481,19 @@
     font-size: 2.5rem;
     font-weight: 900;
 }
-/*
-.open_table{
-    display: block;
-}
-*/
 .open_table{
     display: block;
     width: 246px;
     height: 33px;
     background-color:#f5a605;
-    border-radius:17px;
     font-size: 1.5rem;
     margin: 25px auto 0;
+    transform: skewX(-20deg);
 }
-/*
+.open_table span{
+    display: block;
+    transform: skewX(20deg);
+}
 .maint_table{
     overflow: hidden;
     border: 0;
@@ -503,12 +501,14 @@
     height: 1px;
     clip-path: inset(50%);
 }
-*/
-.maint_table table{
+.maint_table.open{
     overflow: visible;
     width: 100%;
     height:auto;
     clip-path: none;
+}
+.maint_table table{
+    width: 100%;
     margin-top: 25px;
 }
 .maint_table thead{
@@ -644,6 +644,33 @@
     width: 100%;
     height: 300px;
     margin-top: 25px;
+}
+.findser_inner .locationInfo{
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    background-color:#f0eae9;
+}
+.findser_inner .location{
+    float:left;
+    font-size: 1.8rem;
+    line-height: 50px;
+    margin-left: 8%;
+}
+.findser_inner .CTA_location{
+    float:right;
+    display: inline-block;
+    width: 80px;
+    height: 50px;
+    margin-right: 8%;
+    background-color:#f5a605;
+    transform:skewX(-20deg);
+}
+.CTA_location span{
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 900;
+    transform: skewX(20deg);
 }
 
 @media all and (min-width:768px){
@@ -992,6 +1019,10 @@
     }
     .maint_table{
         margin-top: 50px;
+        overflow: visible;
+        width: 100%;
+        height:auto;
+        clip-path: none;
     }
     .maint_table tr *{
         width: 20%;
@@ -1110,6 +1141,30 @@
     .findser_inner .map_wrap{
         height: 600px;
         margin-top: 38px;
+    }
+    .findser_inner .locationInfo{
+        height: 100px;
+        margin: 0 auto;
+        background-color:#f0eae9;
+    }
+    .findser_inner .location{
+        float:left;
+        font-size: 3rem;
+        line-height: 100px;
+        margin-left: 8%;
+    }
+    .findser_inner .CTA_location{
+        float:right;
+        display: inline-block;
+        width: 80px;
+        height: 100px;
+        margin-right: 8%;
+        background-color:#f5a605;
+        transform:skewX(-20deg);
+    }
+    .CTA_location span{
+        display: block;
+        transform: skewX(20deg);
     }
 }
 
