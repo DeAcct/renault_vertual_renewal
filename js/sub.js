@@ -27,13 +27,9 @@ $(function(){
         crd = pos.coords;
         lati = crd.latitude;/*위도*/ 
         longi = crd.longitude;/*경도*/
-        console.log("위도는" + lati + ", 경도는 " + longi)
-        var container = document.getElementById('map_wrap'); //지도를 담을 영역의 DOM 레퍼런스
-        var options = { //지도를 생성할 때 필요한 기본 옵션
-            center: new kakao.maps.LatLng(lati, longi), //지도의 중심좌표.
-            level: 3 //지도의 레벨(확대, 축소 정도)
-        };
-        var map = new kakao.maps.Map(container, options);
+        console.log("위도는" + lati + ", 경도는 " + longi);
+        var newLocation = new kakao.maps.LatLng(lati, longi);
+        map.setCenter(newLocation);
     };
     function error(err) {
         alert('위치를 불러오는 중 문제가 생겼습니다.');
@@ -43,8 +39,15 @@ $(function(){
         timeout: 5000,
         maximumAge: 0
     };
-    navigator.geolocation.getCurrentPosition(success, error, options)
-    /*기본 위도는 37.335887 경도126.584063(서울시청)으로 설정*/
+    $('.CTA_location').click(function(){
+        navigator.geolocation.getCurrentPosition(success, error, options)
+    })
+    var container = document.getElementById('map_wrap');
+    var options = {
+        center: new kakao.maps.LatLng(37.5642135, 127.0016985),
+        level: 3 //지도의 레벨(확대, 축소 정도)
+    };
+    var map = new kakao.maps.Map(container, options);
     
     yearElement.find('span').text(years);
     

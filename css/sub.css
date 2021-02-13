@@ -648,7 +648,6 @@
 .findser_inner .locationInfo{
     width: 100%;
     height: 50px;
-    margin: 0 auto;
     background-color:#f0eae9;
 }
 .findser_inner .location{
@@ -1144,27 +1143,21 @@
     }
     .findser_inner .locationInfo{
         height: 100px;
-        margin: 0 auto;
         background-color:#f0eae9;
     }
     .findser_inner .location{
         float:left;
         font-size: 3rem;
         line-height: 100px;
-        margin-left: 8%;
+        margin-left: 7.813%;
     }
     .findser_inner .CTA_location{
-        float:right;
-        display: inline-block;
-        width: 80px;
+        width: 175px;
         height: 100px;
-        margin-right: 8%;
-        background-color:#f5a605;
-        transform:skewX(-20deg);
+        margin-right: 7.813%;
     }
     .CTA_location span{
-        display: block;
-        transform: skewX(20deg);
+        font-size: 2.8rem;
     }
 }
 
@@ -1796,6 +1789,27 @@
     .findser_inner .map_wrap{
         height: 750px;
         margin-top: 50px;
+    }
+    .findser_inner .locationInfo{
+        width: 900px;
+        height: 100px;
+        margin: 30px auto 0;
+        background-color:#f0eae9;
+        border-radius: 50px;
+    }
+    .findser_inner .location{
+        float:left;
+        font-size: 3rem;
+        line-height: 100px;
+        margin-left: 10%;
+    }
+    .findser_inner .CTA_location{
+        width: 175px;
+        height: 100px;
+        margin-right: 10%;
+    }
+    .CTA_location span{
+        font-size: 2.8rem;
     }
 }
 
