@@ -11,8 +11,8 @@ header{
     height: 108px;
     background-color:rgba(255,255,255,0.95);
     z-index:100;
-    transition: 300ms ease-out;
     backdrop-filter:blur(10px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
 .logo{
@@ -212,11 +212,6 @@ header{
 }
 .slider_wrap .slides li:nth-child(3){
     background-image: url(../img/rn-history-future.jpg);
-}
-.main_wrap .next,
-.main_wrap .prev{
-    display: none;
-    /*모바일에서는 이전다음버튼 불필요*/
 }
 
 .car_left{
@@ -671,24 +666,6 @@ footer{
     #history{
         position:relative;
     }
-    .main_wrap .next,
-    .main_wrap .prev{
-        display: block;
-        position:absolute;
-        right: 0;
-        top: 50%;
-        width: 72px;
-        height: 120px;
-        background:url(../img/rn-icon-right.png) no-repeat center, #99b5c2;
-        text-indent: -9999px;
-    }
-    .main_wrap .prev{
-        display: none;/*제이쿼리 넣기 전까지 유지*/
-        left: 0;
-        right: auto;
-        background-image:url(../img/rn-icon-left.png);
-    }
-    /*prev는 슬라이드 오른쪽으로 이동했을 때 나타난다.*/
     
     .car_left{
         width: 100%;
@@ -1547,14 +1524,6 @@ footer{
     }
     .footer_inner{
         width: 87.5%;
-    }
-}
-
-@media all and (min-width:2450px){
-    .main_wrap .next,
-    .main_wrap .prev{
-        display: none;
-    /*모바일에서는 이전다음버튼 불필요*/
     }
 }
 

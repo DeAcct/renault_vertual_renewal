@@ -1,23 +1,28 @@
 @charset "utf-8";
 
 /*sub1*/
-#visual{
+.sub1 #visual{
     background: url(../img/rn-visual-sub1.jpg) no-repeat center/cover;
+    overflow: hidden;
 }
 
 #visual .sub{
-    display: block;
-    width: 84%;
+    width: 100%;
     text-indent: 0;
-    padding-top: 162px;
+    padding-top: 156px;
     font-size: 6rem;
     font-weight: 700;
+    animation: visualWord 1s forwards;
+    transform-origin: left;
+    opacity: 0;
 }
+
 
 #introduce{
     width: 100%;
     position:relative;
     margin-top: 90px;
+    overflow: hidden;
 }
 .intd_inner{
     width: 84%;
@@ -45,12 +50,20 @@
     font-size: 7.5rem;
     font-weight: 700;
     position:absolute;
-    left: 8.5%;
+    left: 8%;
+    opacity: 0;
+    transition: 150ms ease-out;
 }
 .intd_inner h2 span:last-child{
     top: 91px;
-    right: 8.5%;
+    right: 8%;
     left: auto;
+}
+.intd_inner h2.reach span:first-child{
+    animation: 450ms leftIn forwards ease-out;
+}
+.intd_inner h2.reach span:last-child{
+    animation: 450ms rightIn forwards ease-out;
 }
 .intd_pic{
     margin-top: 17px;
@@ -61,7 +74,7 @@
 .intd_pic p{
     width:100%;
     margin: 0 auto;
-    padding: 31px 8.5%;
+    padding: 31px 8%;
     display: block;
     font-size: 1.3rem;
     line-height: 1.5;
@@ -82,7 +95,7 @@
 .years_inner h2{
     font-size: 2.5rem;
     font-weight: 700;
-    margin-left: 8.5%;
+    margin-left: 8%;
 }
 .years_inner .year_left .years_pic{
     margin-top: 25px;
@@ -140,12 +153,12 @@
 .race_right h2{
     color:#fff;
     margin-top: 39px;
-    margin-left: 8.5%;
+    margin-left: 8%;
     font-size: 2.5rem;
     font-weight: 700;
 }
 .race_right .identity_wrap{
-    margin-left: 8.5%;
+    margin-left: 8%;
     margin-top: 32px;
     width: 91.5%;
 }
@@ -164,7 +177,7 @@
     left: 0;
     width: 100%;
     color:#fff;
-    padding: 30px 8.5%;
+    padding: 30px 8%;
     font-size: 1.2rem;
     line-height: 1.5;
     background-color:rgba(0,0,0,0.5);
@@ -204,7 +217,7 @@
     float:left;
 }
 .future_boxes>div>div{ /*박스 내 아이콘*/
-    margin: 30px 0 0 8.5%;
+    margin: 30px 0 0 8%;
     width: 87px;
     height: 63px;
 }
@@ -226,12 +239,424 @@
     margin: 40px 0 0 28px;
 }
 
+/*sub2 - mobile*/
+.sub2 #visual{
+    background: url(../img/rn-visual-sub2.jpg) no-repeat center/cover;
+    overflow: hidden;
+}
+.sub2 #visual .sub,
+.sub3 #visual .sub{
+    color:#fff;
+}
+
+.main_wrap section{
+    margin-top: 90px;
+}
+.main_wrap section:first-child{
+    margin-top: 45px;
+}
+.main_wrap section .picture{
+    position:relative;
+    width: 92%;
+    height: 347px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 150ms ease-out;
+    opacity: 0;
+    z-index:-1;
+}
+.main_wrap section .picture.reach::after{
+    position:absolute;
+    top:0;
+    left:0;
+    content: '';
+    width: 0;
+    height: 100%;
+    background-color:#f0eae9;
+    animation: 700ms wipe1 forwards; 
+}
+.main_wrap section .picture.reach::before{
+    position:absolute;
+    top:0;
+    left:0;
+    content: '';
+    width: 0;
+    height: 100%;
+    background-color:#baaba9;
+    animation: 700ms wipe2 forwards;
+}
+.main_wrap section .picture.right{
+    margin-left: 8%;
+}
+.main_wrap .summery{
+    width:100%;
+    background-color:#f0eae9;
+}
+.main_wrap .summery_wrap{
+    width: 84%;
+    margin: 0 auto;
+}
+.main_wrap .summery h2{
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-top: 51px;
+}
+.main_wrap .summery h3{
+    font-size: 1.5rem;
+    padding-top: 18px;
+}
+.main_wrap .summery p{
+    font-size: 1.4rem;
+    padding-top: 40px;
+    line-height: 1.4;
+}
+.main_wrap .summery strong{
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding-top: 52px;
+}
+.main_wrap .colorPick{
+    width: 100%;
+    margin-top: 13px;
+    padding-bottom: 54px;
+    display: flex;
+}
+.main_wrap .colorPick span{
+    width: 10.317%; /*65/630*100*/
+    height: 8.667vw;
+    max-height: 32px;
+    max-width: 32px;
+    margin-right: auto;
+    text-indent: -9999px;
+    border-radius: 4px;
+    box-shadow: 4px 4px 6px rgba(208, 197, 196, .3),
+                -4px -4px 6px rgba(255,255,255, 0.5);
+}
+.main_wrap .colorPick span:last-child{
+    margin-right: 0;
+}
+
+
+.zoe_inner .picture{
+    background-image: url(../img/rn-sub2-zoe.jpg);
+}
+#zoe .colorPick span:first-child{
+    background: linear-gradient(135deg, #8fd0e9, #4ab7e0);
+}
+#zoe .colorPick span:nth-child(2){
+    background: linear-gradient(135deg, #ffffff, #eeeeee);
+}
+#zoe .colorPick span:nth-child(3){
+    background: linear-gradient(135deg, #d6dce2, #b7bec5);
+}
+#zoe .colorPick span:nth-child(4){
+    background: linear-gradient(135deg, #adb0b6, #83878e);
+}
+#zoe .colorPick span:nth-child(5){
+    background: linear-gradient(135deg, #e58686, #e34d4d);
+}
+#zoe .colorPick span:nth-child(6){
+    background: linear-gradient(135deg, #8374a2, #5a4780);
+}
+#zoe .colorPick span:last-child{
+    background: linear-gradient(135deg, #646464, #353535);
+}
+
+.captur_inner .picture{
+    background-image: url(../img/rn-sub2-captur.jpg);
+}
+#captur .colorPick span:first-child{
+    background: linear-gradient(135deg, #000 15%, #f27e0b 15%);
+}
+#captur .colorPick span:nth-child(2){
+    background: linear-gradient(135deg, #fff 15%, #260e39 15%);
+}
+#captur .colorPick span:nth-child(3){
+    background: linear-gradient(135deg, #000 15%, #dd1d22 15%);
+}
+#captur .colorPick span:nth-child(4){
+    background: linear-gradient(135deg, #000 15%, #165095 15%);
+}
+#captur .colorPick span:nth-child(5){
+    background: linear-gradient(135deg, #000 15%, #fafafd 15%);
+}
+#captur .colorPick span:nth-child(6){
+    background: linear-gradient(135deg, #000 15%, #d5deed 15%);
+}
+#captur .colorPick span:last-child{
+    background: linear-gradient(135deg, #000 15%, #8c9096 15%);
+}
+
+.twizy_inner .picture{
+    background-image: url(../img/rn-sub2-twizy.jpg);
+}
+#twizy .colorPick span:first-child{
+    background: linear-gradient(135deg, #fff 15%, #000 15%);
+}
+#twizy .colorPick span:nth-child(2){
+    background: linear-gradient(135deg, #fff 15%, #f27f00 15%);
+}
+#twizy .colorPick span:nth-child(3){
+    background: linear-gradient(135deg, #fff 15%, #3eb2f1 15%);
+}
+#twizy .colorPick span:nth-child(4){
+    background: linear-gradient(135deg, #000 15%, #ebebeb 15%);
+}
+#twizy .colorPick span:nth-child(5){
+    background: linear-gradient(135deg, #ffffff, #eeeeee);
+}
+#twizy .colorPick span:last-child{
+    background: linear-gradient(135deg, #646464, #353535);
+}
+#twizy .colorPick span{
+    margin-right: 4.63%;
+}
+
+.master_inner .picture{
+    background-image: url(../img/rn-sub2-master.jpg);
+}
+#master .colorPick span:first-child{
+    background: linear-gradient(135deg, #fff, #eee);
+}
+#master .colorPick span:nth-child(2){
+    background: linear-gradient(135deg, #e6e6e6, #bfbfbf);
+}
+#master .colorPick span:nth-child(3){
+    background: linear-gradient(135deg, #595959, #2d2d2d);
+}
+#master .colorPick span:last-child{
+    background: linear-gradient(135deg, #fff399, #fdd255);
+}
+#master .colorPick span{
+    margin-right: 4.63%;
+}
+
+#myCar{
+    width: 100%;
+}
+.myCar_inner{
+    width: 100%;
+}
+.myCar_inner h2{
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+}
+.myCarBanner{
+    margin-top: 20px;
+    width: 100%;
+    height: 340px;
+    background: url(../img/rn-sub2-myCarBanner.jpg) no-repeat center/cover;
+}
+.myCarBanner h3{
+    padding-top: 139px;
+    font-size: 2rem;
+    text-align: center;
+    color:#fff;
+}
+.myCarBanner h3:after{
+    display: block;
+    content: '';
+    width: 60px;
+    height: 22px;
+    background: url(../img/rn-sub2-bannerArrow.png) no-repeat;
+    background-size: contain;
+    margin: 22px auto 0;
+}
+
+/*sub3 - mobile*/
+.sub3 #visual{
+    background: url(../img/rn-visual-sub3.jpg) no-repeat center/cover;
+    overflow: hidden;
+}
+.maint_inner{
+    width: 100%;
+    margin: 0 auto;
+}
+.maint_inner h2{
+    margin-left: 8%;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+/*
+.open_table{
+    display: block;
+}
+*/
+.open_table{
+    display: block;
+    width: 246px;
+    height: 33px;
+    background-color:#f5a605;
+    border-radius:17px;
+    font-size: 1.5rem;
+    margin: 25px auto 0;
+}
+/*
+.maint_table{
+    overflow: hidden;
+    border: 0;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(50%);
+}
+*/
+.maint_table table{
+    overflow: visible;
+    width: 100%;
+    height:auto;
+    clip-path: none;
+    margin-top: 25px;
+}
+.maint_table thead{
+    display:none;
+}
+.maint_table tbody tr,
+.maint_table tbody td,
+.maint_table tbody th{
+    display: block;
+    text-align: center;
+}
+.maint_table tbody th{
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 48px;
+    background-color:#f0eae9;
+}
+.maint_table tbody td{
+    font-size: 1.3rem;
+    padding: 17px 0;
+    border-bottom: 1px solid #f0eae9;
+}
+
+.repur_inner .repur_pic{
+    width: 100%;
+    height: 261px;
+    background: url(../img/rn-sub3-repurchase.jpg) no-repeat center/cover;
+}
+.repur_inner .repur_content{
+    width: 84%;
+    margin: 0 auto;
+}
+.repur_inner .repur_content h2{
+    margin-top: 35px;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+.repur_inner .repur_content p{
+    margin-top: 17px;
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+.repur_inner .benefit_card{
+    width: 100%;
+    height: 115px;
+    background-color:#f0eae9;
+    margin-top: 35px;
+}
+.repur_inner .beneCard_inner{
+    width: 84%;
+    height: 100%;
+    margin: 0 auto;
+}
+.repur_inner .benefit_card span{
+    float: left;
+    line-height: 115px;
+    font-size: 3rem;
+    color:#f5a605;
+}
+.repur_inner .benefit_card span:last-child{
+    float:right;
+    font-weight: 900;
+}
+
+.autosol_inner h2{
+    text-align: center;
+    font-weight: 900;
+    font-size: 2.5rem;
+}
+.autosol_cont{
+    margin-top: 25px;
+}
+.autosol_cont div{
+    position:relative;
+    width: 84%;
+    height: 160px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 300ms ease-out;
+}
+.autosol_inner .tow{
+    background-image: url(../img/rn-sub3-tow.jpg);
+    background-position: center 75%;
+}
+.autosol_inner .estimate{
+    margin: 0 auto;
+    background-image: url(../img/rn-sub3-estimate.jpg);
+    background-position: center 30%;
+}
+.autosol_inner .guarantee{
+    margin-left: 16%;
+    background-image: url(../img/rn-sub3-guarantee.jpg);
+}
+.autosol_inner h3{
+    color:#fff;
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    line-height: 160px;
+}
+.autosol_cont div.reach::after{
+    position:absolute;
+    top:0;
+    left:0;
+    content: '';
+    width: 0;
+    height: 100%;
+    background-color:#f0eae9;
+    animation: 700ms wipe1 forwards; 
+}
+.autosol_cont div.reach::before{
+    position:absolute;
+    top:0;
+    left:0;
+    content: '';
+    width: 0;
+    height: 100%;
+    background-color:#baaba9;
+    animation: 700ms wipe2 forwards;
+}
+
+.findser_inner h2{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+.findser_inner h3{
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top: 20px;
+}
+.findser_inner .map_wrap{
+    width: 100%;
+    height: 300px;
+    margin-top: 25px;
+}
+
 @media all and (min-width:768px){
     /*sub1*/
-    #visual .sub{
+    .pc{
+        display: block;
+    }
+    #visual .visual_wrap{
+        width: 84.375%;
+    }
+    #visual .visual_wrap h2{
         padding-top: 324px;
         font-size: 12rem;
-        width: 84.375%;
     }
 
     #introduce{
@@ -251,7 +676,7 @@
     }
     .intd_inner h2 span{
         font-size: 15rem;
-        left: 8.5%;
+        left: 8%;
     }
     .intd_inner h2 span:last-child{
         top: 170px;
@@ -451,16 +876,247 @@
         text-align: center;
         margin: 50px auto 0;
     }
+    
+    /*sub2 - 768*/
+
+    .main_wrap section{
+        margin-top: 180px;
+    }
+    .main_wrap section:first-child{
+        margin-top: 90px;
+    }
+    .main_wrap section .picture{
+        width: 92.187%;
+        height: 694px;
+    }
+    .main_wrap section .picture.right{
+        margin-left: 7.813%;
+    }
+    .main_wrap .summery_wrap{
+        width: 84.375%;
+    }
+    .main_wrap .summery h2{
+        font-size: 6rem;
+        padding-top: 102px;
+    }
+    .main_wrap .summery h3{
+        font-size: 3rem;
+        padding-top: 36px;
+    }
+    .main_wrap .summery p{
+        font-size: 2.8rem;
+        padding-top: 80px;
+    }
+    .main_wrap .summery strong{
+        font-size: 2.4rem;
+        padding-top: 104px;
+    }
+    .main_wrap .colorPick{
+        margin-top: 26px;
+        padding-bottom: 108px;
+    }
+    .main_wrap .colorPick span{
+        max-height: 65px;
+        max-width: 65px;
+        border-radius: 8px;
+        box-shadow: 8px 8px 12px rgba(208, 197, 196, .3),
+                    -8px -8px 12px rgba(255,255,255, 0.5);
+    }
+
+    .myCar_inner h2{
+        font-size: 6rem;
+    }
+    .myCarBanner{
+        margin-top: 40px;
+        height: 680px;
+        overflow: hidden;
+        text-align: center;
+    }
+    .myCarBanner .marquee{
+        width: 220vw;
+        padding-top: 175px;
+        display: flex;
+        transition: 150ms ease-out;
+    }
+    .myCarBanner .marquee .chunk{
+        width: 100%;
+        display: flex;
+        margin-right: 3%;
+        justify-content: space-between;
+        animation: 7s linear infinite marquee;
+    }
+    .myCarBanner .marquee span{
+        font-size: 4.5rem;
+        font-weight: 700;
+        color:#fff;
+    }
+    .myCarBanner h3{
+        display: inline-block;
+        padding-top: 225px;
+        font-size: 2rem;
+        margin: 0 auto;
+        width: 100%;
+        transition: 150ms ease-out;
+    }
+    .myCarBanner h3:after{
+        display: inline-block;
+        width: 60px;
+        height: 22px;
+        vertical-align: -4px;
+        margin-left: 30px;
+    }
+    .myCarBanner:hover .marquee{
+        transform: translateY(-400px);
+    }
+    .myCarBanner:hover h3{
+        transform: translateY(-150px);
+        font-size: 4rem;
+    }
+    .myCarBanner:hover h3::after{
+        vertical-align: 6px;
+    }
+    
+    @keyframes marquee{
+        100%{
+            transform: translateX(-110vw);
+        }
+    }
+
+    /*sub3 - 768*/
+    .maint_inner h2{
+        margin-left: 7.813%;
+        font-size: 5rem;
+    }
+    .maint_inner button{
+        display: none;
+    }
+    .maint_table{
+        margin-top: 50px;
+    }
+    .maint_table tr *{
+        width: 20%;
+        line-height: 1.3;
+    }
+    .maint_table tr *:nth-child(2){
+        width: 40%;
+    }
+    .maint_table thead{
+        display:table-header-group;
+        background-color:#f0eae9;
+    }
+    .maint_table thead th{
+        padding: 35px 0;
+        font-size: 2.6rem;
+        font-weight: 900;
+    }
+    .maint_table tbody tr{
+        display: table-row;
+    }
+    .maint_table tbody th{
+        display: table-cell;
+        font-size: 2rem;
+        font-weight: normal;
+        background-color:transparent;
+        border-bottom: 1px solid #f0eae9;
+    }
+    .maint_table tbody td{
+        display: table-cell;
+        font-size: 2rem;
+        padding: 35px 0;
+    }
+    .maint_table .mobile{
+        display: none;
+    }
+
+    .repur_inner .repur_pic{
+        height: 522px;
+    }
+    .repur_inner .repur_content{
+        width: 84.375%;
+    }
+    .repur_inner .repur_content h2{
+        margin-top: 50px;
+        font-size: 5rem;
+    }
+    .repur_inner .repur_content p{
+        margin-top: 40px;
+        font-size: 2rem;
+    }
+    .repur_inner .benefit_card{
+        height: 229px;
+        margin-top: 50px;
+    }
+    .repur_inner .beneCard_inner{
+        width: 84.375%;
+    }
+    .repur_inner .benefit_card span{
+        line-height: 229px;
+        font-size: 6rem;
+    }
+    .repur_inner .benefit_card span:last-child{
+        font-weight: 900;
+    }
+
+    .autosol_inner h2{
+        text-align: left;
+        margin-left: 7.813%;
+        font-size: 5rem;
+    }
+    .autosol_cont{
+        display: flex;
+        margin-top: 50px;
+    }
+    .autosol_cont div{
+        width: 33.333%;
+        height: 380px;
+    }
+    .autosol_cont div p{
+        display: none;
+    }
+    .autosol_cont div:nth-child(2n+1) h3{
+        margin-top: 400px;
+    }
+    .autosol_cont div:nth-child(2n) h3{
+        margin-top: -100px;
+    } 
+    .autosol_cont h3 span{
+        text-align: left;
+        display: block;
+        line-height: 1.3;
+        color:#0b1f38;
+    }
+    .autosol_inner .tow{
+        background-position: center;
+    }
+    .autosol_inner .estimate{
+        margin-top: 155px;
+        background-position: center;
+    }
+    .autosol_inner .guarantee{
+        margin-left: 0;
+    }
+    .autosol_inner h3{
+        margin-left: 12.891%;
+        font-size: 3.3rem;
+    }
+
+    .findser_inner h2{
+        font-size: 5rem;
+    }
+    .findser_inner h3{
+        font-size: 2.6rem;
+        margin-top: 40px;
+    }
+    .findser_inner .map_wrap{
+        height: 600px;
+        margin-top: 38px;
+    }
 }
 
 @media all and (min-width:1024px){
     /*sub1*/
     #visual .visual_wrap{
-        width: 85%;
-    }
-    #visual .visual_wrap .sub{
-        padding-top: 362px;
-        width: 85%;
+        width: 89.746%;
     }
 
     .intd_inner{
@@ -586,13 +1242,169 @@
         font-size: 2.3rem;
         margin-top: 90px;
     }
+    
+    /*sub2 - 1024*/
+    .main_wrap section .picture{
+        width: 100%;
+        height: 694px;
+    }
+    .main_wrap section .summery{
+        width: 89.746%;
+        margin: -135px auto 0;
+    }
+    .main_wrap section .picture.right{
+        margin-left: 0;
+        width: 100%;
+    }
+    .main_wrap .summery_wrap{
+        width: 76.522%; /*704/920*/
+    }
+    .main_wrap .summery h2{
+        font-size: 6rem;
+        padding-top: 102px;
+    }
+    .main_wrap .summery h3{
+        font-size: 3rem;
+        padding-top: 36px;
+    }
+    .main_wrap .summery p{
+        padding-top: 80px;
+    }
+    .main_wrap .summery strong{
+        padding-top: 104px;
+    }
+    .main_wrap .colorPick{
+        margin-top: 26px;
+        padding-bottom: 108px;
+    }
+    .main_wrap .colorPick span{
+        width: 9.233%;
+        height: 6.348vw;
+        margin-right: auto;
+        border-radius: 8px;
+    }
+
+    .myCarBanner .marquee span{
+        font-size: 5.8rem;
+    }
+    .myCarBanner h3{
+        font-size: 4rem;
+    }
+    .myCarBanner h3:after{
+        vertical-align: 3px;
+    }
+
+    /*sub3 - 1024*/
+    .maint_inner{
+        width: 89.746%;
+    }
+    .maint_inner h2{
+        margin:0;
+    }
+    .maint_table tr *{
+        line-height: 1.3;
+    }
+    .maint_table thead th{
+        font-size: 2.8rem;
+    }
+    .maint_table tbody td,
+    .maint_table tbody th{
+        font-size: 2.6rem;
+    }
+    .maint_table .mobile{
+        display: none;
+    }
+
+    .repur_inner .repur_content{
+        width: 89.746%;
+    }
+    .repur_inner .repur_content h2{
+        margin-top: 70px;
+    }
+    .repur_inner .repur_content p{
+        margin-top: 45px;
+        font-size: 3rem;
+    }
+    .repur_inner .benefit_card{
+        width: 94.922%;
+        height: 229px;
+        margin-left: 5.078%;
+    }
+    .repur_inner .beneCard_inner{
+        width: 66.049%;/*642/972*100*/
+    }
+    .repur_inner .benefit_card span{
+        line-height: 229px;
+        font-size: 10rem;
+    }
+
+    .autosol_inner h2{
+        text-align: left;
+        margin-left: 5.078%;
+        font-size: 5rem;
+    }
+    .autosol_cont div{
+        height: 450px;
+    }
+    .autosol_cont div p{
+        display: none;
+    }
+    .autosol_cont div:nth-child(2n+1) h3{
+        margin-top: 494px;
+    }
+    .autosol_cont div:nth-child(2n) h3{
+        margin-top: -230px;
+    }
+    .autosol_inner .estimate{
+        margin-top: 260px;
+    }
+    .autosol_inner h3{
+        margin-left: 15.205%;
+        font-size: 4rem;
+    }
+
+    .findser_inner h2{
+        font-size: 5rem;
+    }
+    .findser_inner h3{
+        font-size: 2.6rem;
+        margin-top: 40px;
+    }
+    .findser_inner .map_wrap{
+        height: 600px;
+        margin-top: 38px;
+    }
 }
 
 @media all and (min-width:1300px){
     /*sub1*/
     #visual .sub{
+        width: 100%;
+    }
+    #visual .visual_wrap {
         width: 87.5%;
     }
+    @keyframes visualWord{
+        0%{ 
+            opacity: 0;
+            transform: rotateY(90deg) skewX(0deg);
+            letter-spacing: normal;
+        }
+        70%{
+            opacity: 1;
+        }
+        80%{
+            opacity: 1;
+            transform: rotateY(0deg) skewX(20deg);
+            letter-spacing: 10rem;
+        }
+        100%{
+            transform: skewX(0deg);
+            opacity: 1;
+            letter-spacing: normal;
+        }
+    }
+
 
     .intd_inner{
         width: 87.5%;
@@ -623,7 +1435,6 @@
         padding-top: 310px;
         background-color: transparent;
         backdrop-filter: none;
-        mix-blend-mode: normal;
         color:#0b1f38;
         padding-left:0;
         padding-right:0;
@@ -757,6 +1568,180 @@
         font-size: 2.5rem;
         margin-top: 60px;
     }
+    
+    /*sub2 - 1300*/
+    .sub2 .main_wrap section{
+        height: 828px;
+        width: 100%;
+        position: relative;
+    }
+    .main_wrap section .picture{ /*1105/1920*100*/
+        position:absolute;
+        width: 57.552%;
+        height: 828px;
+        z-index: -1;
+    }
+    .main_wrap section .summery{
+        position: absolute;
+        width: 48.333%; /*928/1920*100*/
+        height: 680px;
+        margin:0;
+        right: 0;
+        top: 74px;
+    }
+    .main_wrap section .picture.right{
+        margin-left: 0;
+        width: 57.552%;
+        position: absolute;
+        right: 0;
+    }
+    .main_wrap section .summery.right{
+        left: 0;
+    }
+    .main_wrap .summery_wrap{
+        width: 73.267%; /*592/808*/
+    }
+    .main_wrap .summery h2{
+        font-size: 6rem;
+        padding-top: 102px;
+    }
+    .main_wrap .summery h3{
+        font-size: 3rem;
+        padding-top: 36px;
+    }
+    .main_wrap .summery p{
+        padding-top: 80px;
+    }
+    .main_wrap .summery strong{
+        padding-top: 104px;
+    }
+    .main_wrap .colorPick{
+        margin-top: 26px;
+        padding-bottom: 108px;
+    }
+    .main_wrap .colorPick span{
+        width: 9.233%;
+        height: 3.385vw; /*65/592*/
+        border-radius: 8px;
+    }
+
+    .myCarBanner .marquee span{
+        font-size: 8rem;
+    }
+    .myCarBanner h3:after{
+        vertical-align: 3px;
+    }
+
+    /*sub3 - 1300*/
+    .maint_inner{
+        width: 87.5%;
+    }
+    .maint_inner h2{
+        margin:0;
+    }
+    .maint_table{
+        margin-top:70px;
+    }
+    .maint_table thead th{
+        font-size: 3rem;
+    }
+    .maint_table tbody td,
+    .maint_table tbody th{
+        font-size: 3rem;
+    }
+
+
+    .repur_inner{
+        width: 100%;
+        height: 1080px;
+    }
+    .repur_inner .repur_pic{
+        width: 50%;
+        height: 1080px;
+        float:left;
+    }
+    .repur_inner .repur_content{
+        width: 50%;
+        height: 630px;
+        float:right;
+        padding-left: 4.427%;
+    }
+    .repur_inner .repur_content h2{
+        margin-top: 80px;
+    }
+    .repur_inner .repur_content p{
+        margin-top: 210px;
+        font-size: 3rem;
+    }
+    .repur_inner .benefit_card{
+        float:right;
+        width: 50%;
+        height: 450px;
+        margin: 0;
+    }
+    .repur_inner .beneCard_inner{
+        width: 80%;/*650/960*100*/
+    }
+    .repur_inner .benefit_card span{
+        line-height: 450px;
+        font-size: 8rem;
+    }
+
+    .autosol_inner h2{
+        margin-left: 6.25%;
+        font-size: 5rem;
+    }
+    .autosol_cont{
+        width: 87.5%;
+        margin: 70px auto 0;
+    }
+    .autosol_cont div{
+        width: 30.952%;
+        height: 724px;
+        overflow: hidden;
+    }
+    #autosol .autosol_cont h3{
+        margin-left: 10.385%;/*54/520*100*/
+        margin-top: 520px;
+        transition: 150ms ease-out;
+    }
+    #autosol .autosol_cont div h3.reach{
+        animation: updown 500ms ease-out 2;
+    }
+    .autosol_inner .estimate{
+        margin-top: 0;
+    }
+    .autosol_inner h3 span{
+        color:#fff;
+        font-size: 4.5rem;
+    }
+    .autosol_cont div p{
+        margin: 50px 10.385% 0;
+        display:block;
+        color:#fff;
+        font-size: 3rem;
+        line-height: 1.3;
+        opacity:0;
+        transition: 150ms ease-out;
+    }
+    #autosol .autosol_cont div:hover h3{
+        margin-top: 400px;
+    }
+    .autosol_cont div:hover p{
+        opacity:1;
+    }
+
+    .findser_inner h2{
+        font-size: 5rem;
+    }
+    .findser_inner h3{
+        font-size: 3rem;
+        margin-top: 70px;
+    }
+    .findser_inner .map_wrap{
+        height: 750px;
+        margin-top: 50px;
+    }
 }
 
 @media all and (min-width: 1600px){
@@ -778,17 +1763,117 @@
         height: 650px;
         margin-top: 15px;
     }
+    
+    /*sub2 - 1600*/
+    .main_wrap section .summery{
+        width: 42.083%; /*808/1920*100*/
+        right: 6.25%;
+    }
+    .main_wrap section .summery.right{
+        left: 6.25%;
+    }
+    .myCarBanner .marquee{
+        width: 175vw;
+        padding-top: 175px;
+        display: flex;
+        transition: 150ms ease-out;
+    }
+    .myCar_inner{
+        width: 87.5%;
+        margin: 0 auto
+    }
+    @keyframes marquee{
+        100%{
+            transform: translateX(-87.5vw);
+        }
+    }
 }
 
 @keyframes intdBg{
     0%{
         width: 0%;
     }
-    50%{
+    75%{
         width: 100%;
         transform: skewY(0);
     }
     100%{
         transform: skewY(10deg);
+    }
+}
+@keyframes leftIn{
+    0%{
+        transform: translateX(-100vw);
+    }
+    100%{
+        opacity:1;
+        transform: translateX(0);
+    }
+}
+@keyframes rightIn{
+    0%{
+        transform: translateX(100vw);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes visualWord{
+    0%{ 
+        opacity: 0;
+        transform: rotateY(90deg) skewX(0deg);
+        letter-spacing: normal;
+    }
+    70%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+        transform: rotateY(0deg) skewX(20deg);
+        letter-spacing: 3rem;
+    }
+    100%{
+        opacity: 1;
+        transform: skewX(0deg);
+        letter-spacing: normal;
+    }
+}
+
+@keyframes wipe1{
+    0%{
+        width: 100%;
+    }
+    49%{
+        opacity:1;
+    }
+    50%{
+        width: 0;
+        opacity:0;
+    }
+}
+@keyframes wipe2{
+    0%{
+        width: 100%;
+    }
+    30%{
+        width: 100%;
+    }
+    79%{
+        opacity:1;
+    }
+    80%{
+        width: 0;
+        opacity:0;
+    }
+}
+
+
+@keyframes updown{
+    80%{
+        transform:translateY(-30px);
+    }
+    100%{
+        transform:translateY(0);
     }
 }
