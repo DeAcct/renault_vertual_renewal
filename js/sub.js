@@ -12,7 +12,8 @@ $(function(){
     var autosolution = $('.autosol_cont div');
     var autosolText = autosolution.find('h3');
     var tableOpenBtn = $('.open_table');
-    var table = $('.maint_table')
+    var table = $('.maint_table');
+    var location = $('.location');
     var nowYear = new Date().getFullYear();
     var years = nowYear-1891;
     var yearElement = $('.years_inner .year_right strong')
@@ -22,7 +23,17 @@ $(function(){
         deviceWidth = Window.innerWidth();
     })
 
-    /*location 요청관련 CTA 개발 필요*/
+    /*서비스센터 위치 표시하는 핀 추가필요*/
+    
+    var container = document.getElementById('map_wrap');
+    var options = {
+        center: new kakao.maps.LatLng(37.5642135, 127.0016985),
+        level: 3 //지도의 레벨(확대, 축소 정도)
+    };
+    var map = new kakao.maps.Map(container, options);
+    
+    var geocoder = new kakao.maps.services.Geocoder();
+    coordToAddr(map.getCenter(), displayAddr)
     function success(pos) {
         crd = pos.coords;
         lati = crd.latitude;/*위도*/ 
@@ -30,6 +41,25 @@ $(function(){
         console.log("위도는" + lati + ", 경도는 " + longi);
         var newLocation = new kakao.maps.LatLng(lati, longi);
         map.setCenter(newLocation);
+        coordToAddr(map.getCenter(), displayAddr)
+        kakao.maps.event.addListener(map, 'idle', function() {
+            coordToAddr(map.getCenter(), displayAddr);
+        });
+    };
+    function coordToAddr(coords, callback) {
+        geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);         
+    };
+    function displayAddr(result, status) {
+        if (status === kakao.maps.services.Status.OK) {
+    
+            for(var i = 0; i < result.length; i++) {
+                // 행정동의 region_type 값은 'H' 이므로
+                if (result[i].region_type === 'H') {
+                    location.text(result[i].address_name);
+                    break;
+                }
+            }
+        }    
     };
     function error(err) {
         alert('위치를 불러오는 중 문제가 생겼습니다.');
@@ -42,12 +72,6 @@ $(function(){
     $('.CTA_location').click(function(){
         navigator.geolocation.getCurrentPosition(success, error, options)
     })
-    var container = document.getElementById('map_wrap');
-    var options = {
-        center: new kakao.maps.LatLng(37.5642135, 127.0016985),
-        level: 3 //지도의 레벨(확대, 축소 정도)
-    };
-    var map = new kakao.maps.Map(container, options);
     
     yearElement.find('span').text(years);
     
