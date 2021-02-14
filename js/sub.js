@@ -13,7 +13,7 @@ $(function(){
     var autosolText = autosolution.find('h3');
     var tableOpenBtn = $('.open_table');
     var table = $('.maint_table');
-    var location = $('.location');
+    var centerName = $('.centerName');
     var nowYear = new Date().getFullYear();
     var years = nowYear-1891;
     var yearElement = $('.years_inner .year_right strong')
@@ -23,8 +23,7 @@ $(function(){
         deviceWidth = Window.innerWidth();
     })
 
-    /*서비스센터 위치 표시하는 핀 추가필요*/
-    
+    /*기본위치로 지도 표시*/
     var container = document.getElementById('map_wrap');
     var options = {
         center: new kakao.maps.LatLng(37.5642135, 127.0016985),
@@ -32,34 +31,38 @@ $(function(){
     };
     var map = new kakao.maps.Map(container, options);
     
-    var geocoder = new kakao.maps.services.Geocoder();
-    coordToAddr(map.getCenter(), displayAddr)
+    /*서비스센터 위치표시*/ 
+    var servicePos = new kakao.maps.services.Places(); 
+    servicePos.keywordSearch('르노 서비스센터', serviceSearch); 
+
+    function serviceSearch(data, status){
+        if (status === kakao.maps.services.Status.OK){
+            var bounds = new kakao.maps.LatLngBounds();
+            for (var i=0; i<data.length; i++) {
+                displayMarker(data[i]);
+                bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+            }
+            map.setBounds(bounds); 
+        }
+    }
+    function displayMarker(place){
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(place.y, place.x) 
+        });
+        kakao.maps.event.addListener(marker, 'click', function() {
+            centerName.text(place.place_name);
+        });
+    }
+
+    /*현재 사용자의 위치 주소 표시*/
     function success(pos) {
         crd = pos.coords;
         lati = crd.latitude;/*위도*/ 
         longi = crd.longitude;/*경도*/
-        console.log("위도는" + lati + ", 경도는 " + longi);
         var newLocation = new kakao.maps.LatLng(lati, longi);
         map.setCenter(newLocation);
-        coordToAddr(map.getCenter(), displayAddr)
-        kakao.maps.event.addListener(map, 'idle', function() {
-            coordToAddr(map.getCenter(), displayAddr);
-        });
-    };
-    function coordToAddr(coords, callback) {
-        geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);         
-    };
-    function displayAddr(result, status) {
-        if (status === kakao.maps.services.Status.OK) {
-    
-            for(var i = 0; i < result.length; i++) {
-                // 행정동의 region_type 값은 'H' 이므로
-                if (result[i].region_type === 'H') {
-                    location.text(result[i].address_name);
-                    break;
-                }
-            }
-        }    
+        map.setLevel(7);
     };
     function error(err) {
         alert('위치를 불러오는 중 문제가 생겼습니다.');
