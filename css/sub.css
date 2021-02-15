@@ -661,19 +661,23 @@
 }
 .findser_inner .locationInfo{
     width: 100%;
-    height: 50px;
     background-color:#f0eae9;
+    padding: 15px 8%;
 }
 .findser_inner .centerName{
     display: inline-block;
-    font-size: 1.8rem;
-    line-height: 50px;
+    font-size: 2.3rem;
+    font-weight: 900;
     width: 100%;
-    text-align: center;
+}
+.findser_inner .address{
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-top: 8px;
 }
 .findser_inner .CTA_location{
     position:absolute;
-    z-index: 100;
+    z-index: 2;
     width:40px;
     height: 40px;
     top:10px;
@@ -1157,19 +1161,19 @@
         margin-top: 38px;
     }
     .findser_inner .locationInfo{
-        height: 100px;
-        background-color:#f0eae9;
+        padding: 30px 7.813%;
     }
     .findser_inner .centerName{
-        float:left;
-        font-size: 3rem;
-        line-height: 100px;
-        margin-left: 7.813%;
+        font-size: 3.5rem;
+        font-weight: 900;
+    }
+    .findser_inner .address{
+        font-size: 2.3rem;
+        margin-top: 15px;
     }
     .findser_inner .CTA_location{
-        width: 175px;
-        height: 100px;
-        margin-right: 7.813%;
+        width: 60px;
+        height: 60px;
     }
     .CTA_location span{
         font-size: 2.8rem;
@@ -1425,7 +1429,10 @@
         margin-left: 15.205%;
         font-size: 4rem;
     }
-
+    
+    .findser_inner .locationInfo{
+        padding: 25px 5.078%;
+    }
     .findser_inner h2{
         font-size: 5rem;
     }
@@ -1806,22 +1813,19 @@
         margin-top: 50px;
     }
     .findser_inner .locationInfo{
-        width: 900px;
-        height: 100px;
-        margin: 30px auto 0;
-        background-color:#f0eae9;
-        border-radius: 50px;
+        padding: 30px 6.25%;
     }
     .findser_inner .centerName{
-        float:left;
-        font-size: 3rem;
-        line-height: 100px;
-        margin-left: 10%;
+        font-size: 3.5rem;
+        font-weight: 900;
+    }
+    .findser_inner .address{
+        font-size: 2.3rem;
+        margin-top: 15px;
     }
     .findser_inner .CTA_location{
-        width: 175px;
-        height: 100px;
-        margin-right: 10%;
+        width: 70px;
+        height: 70px;
     }
     .CTA_location span{
         font-size: 2.8rem;

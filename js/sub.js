@@ -14,6 +14,7 @@ $(function(){
     var tableOpenBtn = $('.open_table');
     var table = $('.maint_table');
     var centerName = $('.centerName');
+    var address = $('.address');
     var nowYear = new Date().getFullYear();
     var years = nowYear-1891;
     var yearElement = $('.years_inner .year_right strong')
@@ -46,12 +47,16 @@ $(function(){
         }
     }
     function displayMarker(place){
+        var position = new kakao.maps.LatLng(place.y, place.x)
         var marker = new kakao.maps.Marker({
             map: map,
-            position: new kakao.maps.LatLng(place.y, place.x) 
+            position: position
         });
         kakao.maps.event.addListener(marker, 'click', function() {
+            map.setLevel(3);
+            map.setCenter(position);
             centerName.text(place.place_name);
+            address.text(place.address_name)
         });
     }
 
@@ -61,8 +66,8 @@ $(function(){
         lati = crd.latitude;/*위도*/ 
         longi = crd.longitude;/*경도*/
         var newLocation = new kakao.maps.LatLng(lati, longi);
-        map.setCenter(newLocation);
         map.setLevel(7);
+        map.setCenter(newLocation);
     };
     function error(err) {
         alert('위치를 불러오는 중 문제가 생겼습니다.');
