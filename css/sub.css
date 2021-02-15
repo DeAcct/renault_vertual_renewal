@@ -561,6 +561,7 @@
     width: 84%;
     height: 100%;
     margin: 0 auto;
+    transition: 150ms ease*
 }
 .repur_inner .benefit_card span{
     float: left;
@@ -570,6 +571,9 @@
 }
 .repur_inner .benefit_card span:last-child{
     float:right;
+    font-weight: 900;
+}
+.repur_inner .benefit_card span:last-child strong{
     font-weight: 900;
 }
 

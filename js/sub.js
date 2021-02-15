@@ -23,63 +23,6 @@ $(function(){
     Window.resize(function(){
         deviceWidth = Window.innerWidth();
     })
-
-    /*기본위치로 지도 표시*/
-    var container = document.getElementById('map_wrap');
-    var options = {
-        center: new kakao.maps.LatLng(37.5642135, 127.0016985),
-        level: 3 //지도의 레벨(확대, 축소 정도)
-    };
-    var map = new kakao.maps.Map(container, options);
-    
-    /*서비스센터 위치표시*/ 
-    var servicePos = new kakao.maps.services.Places(); 
-    servicePos.keywordSearch('르노 서비스센터', serviceSearch); 
-
-    function serviceSearch(data, status){
-        if (status === kakao.maps.services.Status.OK){
-            var bounds = new kakao.maps.LatLngBounds();
-            for (var i=0; i<data.length; i++) {
-                displayMarker(data[i]);
-                bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-            }
-            map.setBounds(bounds); 
-        }
-    }
-    function displayMarker(place){
-        var position = new kakao.maps.LatLng(place.y, place.x)
-        var marker = new kakao.maps.Marker({
-            map: map,
-            position: position
-        });
-        kakao.maps.event.addListener(marker, 'click', function() {
-            map.setLevel(3);
-            map.setCenter(position);
-            centerName.text(place.place_name);
-            address.text(place.address_name)
-        });
-    }
-
-    /*현재 사용자의 위치 주소 표시*/
-    function success(pos) {
-        crd = pos.coords;
-        lati = crd.latitude;/*위도*/ 
-        longi = crd.longitude;/*경도*/
-        var newLocation = new kakao.maps.LatLng(lati, longi);
-        map.setLevel(7);
-        map.setCenter(newLocation);
-    };
-    function error(err) {
-        alert('위치를 불러오는 중 문제가 생겼습니다.');
-    };
-    var options = {
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0
-    };
-    $('.CTA_location').click(function(){
-        navigator.geolocation.getCurrentPosition(success, error, options)
-    })
     
     yearElement.find('span').text(years);
     
@@ -101,7 +44,82 @@ $(function(){
         parrTargets = [zoePic, capturPic, twizyPic, masterPic];
     }
     else if(nowPage=='sub3'){
-        parrTargets = [autosolution, autosolText]
+        parrTargets = [autosolution, autosolText];
+        /*기본위치로 지도 표시*/
+        var container = document.getElementById('map_wrap');
+        var options = {
+            center: new kakao.maps.LatLng(37.5642135, 127.0016985),
+            level: 3 //지도의 레벨(확대, 축소 정도)
+        };
+        var map = new kakao.maps.Map(container, options);
+        
+        /*서비스센터 위치표시*/ 
+        var servicePos = new kakao.maps.services.Places(); 
+        servicePos.keywordSearch('르노 서비스센터', serviceSearch); 
+
+        function serviceSearch(data, status){
+            if (status === kakao.maps.services.Status.OK){
+                var bounds = new kakao.maps.LatLngBounds();
+                for (var i=0; i<data.length; i++) {
+                    displayMarker(data[i]);
+                    bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+                }
+                map.setBounds(bounds); 
+            }
+        }
+        function displayMarker(place){
+            var position = new kakao.maps.LatLng(place.y, place.x)
+            var marker = new kakao.maps.Marker({
+                map: map,
+                position: position
+            });
+            kakao.maps.event.addListener(marker, 'click', function() {
+                map.setLevel(3);
+                map.setCenter(position);
+                centerName.text(place.place_name);
+                address.text(place.address_name)
+            });
+        }
+
+        /*현재 사용자의 위치 주소 표시*/
+        function success(pos) {
+            crd = pos.coords;
+            lati = crd.latitude;/*위도*/ 
+            longi = crd.longitude;/*경도*/
+            var newLocation = new kakao.maps.LatLng(lati, longi);
+            map.setLevel(7);
+            map.setCenter(newLocation);
+        };
+        function error(err) {
+            alert('위치를 불러오는 중 문제가 생겼습니다.');
+        };
+        var options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        };
+        $('.CTA_location').click(function(){
+            navigator.geolocation.getCurrentPosition(success, error, options)
+        })
+        
+        anime({
+            targets: '.times strong',
+            innerText: [2,10],
+            round: 1,
+            easing: 'easeInOutCubic',
+            loop: true,
+            duration: 2000,
+            delay:500
+        })
+        anime({
+            targets: '.support strong',
+            innerText: [20,100],
+            round: 1,
+            easing: 'easeInOutCubic',
+            loop: true,
+            duration: 2000,
+            delay:500
+        })
     }
     
     
@@ -164,4 +182,5 @@ $(function(){
             $(this).find('span').text('표 펼치기');
         }
     })
+    
 })
