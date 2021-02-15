@@ -16,7 +16,7 @@ $(function(){
     var imgChange = function(imgTarget){
         var deviceWidth = Window.innerWidth();
         var clicked = $(imgTarget).parent().index()+1;
-        var imgReady = 'url(../img/rn-car-'+clicked+'.jpg) center/cover';
+        var imgReady = 'url(img/rn-car-'+clicked+'.jpg) center/cover';
         
         /*이미지 바꾸기*/
         /*모바일 디바이스일 때*/
@@ -41,6 +41,7 @@ $(function(){
             imgChange(carL.find('a'));
         })
     }
+
     
     /*패럴렉스 스크롤링*/
     var parallax = function(scrTop, targets){
