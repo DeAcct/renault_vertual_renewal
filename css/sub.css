@@ -740,6 +740,7 @@
     font-size: 2rem;
     font-weight: 900;
     line-height: 1.4;
+    padding:0;
 }
 .news_inner article .summery p{
     font-size: 1.4rem;
@@ -757,10 +758,10 @@
     background: url(../img/rn-sub4-energy.jpg) no-repeat center/cover; /*임시*/
 }
 
-#news article:nth-child(2) .news_picture{
+#news article:nth-of-type(2) .news_picture{
     background-image: url(../img/rn-sub4-zoe.jpg)
 }
-#news article:last-child .news_picture{
+#news article:last-of-type .news_picture{
     background-image: url(../img/rn-sub4-master.jpg);
 }
 
@@ -1314,6 +1315,124 @@
     }
     .CTA_location span{
         font-size: 2.8rem;
+    }
+
+    /*sub4 - 768*/
+    .main_wrap h2{
+        font-size: 5rem;
+    }
+    .news_inner article{
+        margin-bottom: 65px;
+    }
+    .news_inner .topline{
+        width: 84.375%;
+        margin: 0 auto 314px;
+    }
+    .news_inner .topline .date{
+        position: relative;
+    }
+    .news_inner .topline .date::after{
+        content:'';
+        display: inline-block;
+        position:absolute;
+        width: 100px;
+        height: 100px;
+        background-color:#f5a605;
+        left:40px;
+        top: 40px;
+        z-index: -1;
+    }
+    .news_inner .topline .yearmonth{
+        font-size: 2rem;
+    }
+    .news_inner .topline .day{
+        font-size: 7rem;
+    }
+    .news_inner .topline .line{
+        top: 3px;
+        right: 7.813%;
+        width: 65.495%;
+        height: 1px;
+    }
+    .news_inner article .summery{
+        width: 84.375%;
+    }
+    #news article h3{
+        font-size: 4.3rem;
+    }
+    .news_inner article .summery p{
+        font-size: 2.8rem;
+        padding-top: 88px;
+    }
+    .news_inner article .news_picture{
+        top:40px;
+        right:7.813%;
+        width: 280px;
+        height: 280px;
+        overflow: hidden;
+        background: url(../img/rn-sub4-energy.jpg) no-repeat center/cover; /*임시*/
+        transition: 150ms ease-out;
+    }
+    .news_inner article:hover .news_picture{
+        border-bottom-right-radius: 50px;
+    }
+    .news_inner article .news_picture span{
+        position:absolute;
+        display: block;
+        background: #f0eae9;
+        width: 50px;
+        height: 50px;
+        right: -50px;
+        bottom: -50px;
+        box-shadow: -3px -3px 10px rgba(0,0,0,0.3);
+        transition: 150ms ease-out;
+    }
+    .news_inner article:hover .news_picture span{
+        right: 0;
+        bottom: 0;
+    }
+
+    .video_inner{
+        width: 84.375%;
+    }
+    .video_inner h2{
+        margin-bottom: 45px;
+    }
+    .video_inner .youtube_area{
+        width: 100%;
+        height: 438px;
+        margin-bottom: 44px;
+    }
+    .video_inner .video_right .date{
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+    }
+    .video_inner .video_right h3{
+        font-size: 4.3rem;
+        margin-bottom: 35px;
+    }
+    .video_inner .discription{
+        padding: 70px 9.722% 70px 0;
+        margin-bottom: 64px;
+    }
+    .video_inner .discription::after{
+        top: -55px;
+        width: 170px;
+        height: 250px;
+    }
+    .video_inner .discription p{
+        font-size: 2.8rem;
+        line-height: 1.5;
+        padding-left: 31.944%; /*207/648*100*/
+    }
+    .video_inner a{
+        width: 410px;
+        height: 70px;
+        background-color:#0b1f38;
+        color:#fff;
+        text-align: center;
+        line-height: 70px;
+        font-size: 3rem;
     }
 }
 
