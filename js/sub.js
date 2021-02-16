@@ -55,7 +55,7 @@ $(function(){
         
         /*서비스센터 위치표시*/ 
         var servicePos = new kakao.maps.services.Places(); 
-        servicePos.keywordSearch('르노 서비스센터', serviceSearch); 
+        servicePos.keywordSearch('르노 서비스', serviceSearch); 
 
         function serviceSearch(data, status){
             if (status === kakao.maps.services.Status.OK){
