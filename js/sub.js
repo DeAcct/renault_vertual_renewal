@@ -15,6 +15,9 @@ $(function(){
     var table = $('.maint_table');
     var centerName = $('.centerName');
     var address = $('.address');
+    var energy = $('.energy');
+    var zoeRel = $('.zoe_rel');
+    var masterRel = $('.master_rel');
     var nowYear = new Date().getFullYear();
     var years = nowYear-1891;
     var yearElement = $('.years_inner .year_right strong')
@@ -121,6 +124,9 @@ $(function(){
             delay:500
         })
     }
+    else{
+        parrTargets = [energy, zoeRel, masterRel];
+    }
     
     
     var parallax = function(scrTop, targets){
@@ -129,7 +135,7 @@ $(function(){
         for(i=0;i<targets.length;i++){
             /*대상 엘리먼트의 최상위값 구하기*/
             parTargetY = targets[i].offset().top;
-            if (scrTop>=parTargetY-deviceHeight/1.4){
+            if (scrTop>=parTargetY-deviceHeight/2){
                 targets[i].addClass('reach').css({
                     opacity:1
                 });

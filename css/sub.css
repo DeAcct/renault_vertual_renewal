@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+
+#visual{
+    overflow: hidden;
+}
 /*sub1*/
 .sub1 #visual{
     background: url(../img/rn-visual-sub1.jpg) no-repeat center/cover;
@@ -696,7 +700,7 @@
     background-image: url(../img/rn-visual-sub4.jpg);
 }
 
-.main_wrap h2{
+.sub4 .main_wrap h2{
     text-align: center;
     font-size: 2.5rem;
     font-weight: 900;
@@ -731,10 +735,13 @@
     position: relative;
     margin-bottom: 65px;
 }
-.news_inner article .summery{
+#news .news_inner article .summery{
     width: 84%;
+    height: auto;
     margin: 0 auto;
     background-color: transparent;
+    overflow: hidden;
+    position:static;
 }
 #news article h3{
     font-size: 2rem;
@@ -755,11 +762,18 @@
     right:8%;
     width: 104px;
     height: 104px;
-    background: url(../img/rn-sub4-energy.jpg) no-repeat center/cover; /*임시*/
+    background: url(../img/rn-sub4-energy.jpg) no-repeat center/cover;
+    opacity:0;
+    transition: 300ms ease-out;
+    transform: perspective(500px) translateZ(-1000px) rotateY(-180deg);
 }
-
-#news article:nth-of-type(2) .news_picture{
-    background-image: url(../img/rn-sub4-zoe.jpg)
+#news .news_inner article .news_picture.reach{
+    animation: pic_odd 300ms ease-out forwards;
+    transform: perspective(500px) translateZ(0) rotateY(0deg);
+}
+#news article:nth-of-type(2n) .news_picture{
+    transform: perspective(500px) translateZ(-1000px) rotateY(180deg);
+    background-image: url(../img/rn-sub4-zoe.jpg);
 }
 #news article:last-of-type .news_picture{
     background-image: url(../img/rn-sub4-master.jpg);
@@ -1369,28 +1383,9 @@
         right:7.813%;
         width: 280px;
         height: 280px;
-        overflow: hidden;
-        background: url(../img/rn-sub4-energy.jpg) no-repeat center/cover; /*임시*/
-        transition: 150ms ease-out;
     }
-    .news_inner article:hover .news_picture{
-        border-bottom-right-radius: 50px;
-    }
-    .news_inner article .news_picture span{
-        position:absolute;
-        display: block;
-        background: #f0eae9;
-        width: 50px;
-        height: 50px;
-        right: -50px;
-        bottom: -50px;
-        box-shadow: -3px -3px 10px rgba(0,0,0,0.3);
-        transition: 150ms ease-out;
-    }
-    .news_inner article:hover .news_picture span{
-        right: 0;
-        bottom: 0;
-    }
+    
+
 
     .video_inner{
         width: 84.375%;
@@ -1700,6 +1695,83 @@
         height: 600px;
         margin-top: 38px;
     }
+
+    /*sub4 - 1024*/
+    .news_inner article{
+        margin-bottom: 130px;
+    }
+    .news_inner .topline{
+        width: 89.746%;
+    }
+    .news_inner .topline .line{
+        right: 5.078%;
+        width: 65.495%;
+        height: 1px;
+    }
+    #news .news_inner article .summery{
+        width: 89.746%;
+    }
+    #news article h3{
+        font-size: 5.5rem;
+    }
+    .news_inner article .summery p{
+        font-size: 3rem;
+        padding-top: 70px;
+    }
+    .news_inner article .news_picture{
+        top:40px;
+        right:5.078%;
+    }
+    
+    .video_inner{
+        width: 100%;
+    }
+    .video_inner h2{
+        margin-bottom: 45px;
+    }
+    .video_inner .youtube_area{
+        height: 720px;
+        margin-bottom: 58px;
+    }
+    .video_inner .video_right{
+        width: 100%;
+        padding-left:5.078%;
+    }
+    .video_inner .video_right .date{
+        font-size: 3.6rem;
+        margin-bottom: 29px;
+    }
+    .video_inner .video_right h3{
+        font-size: 5.5rem;
+        margin-bottom: 40px;
+    }
+    .video_inner .discription{
+        width: 100%;
+        padding: 70px 9.722% 70px 0;
+        margin-bottom: 64px;
+        margin-right:0;
+    }
+    .video_inner .discription::after{
+        top: -55px;
+        width: 170px;
+        height: 250px;
+    }
+    .video_inner .discription p{
+        font-size: 2.8rem;
+        line-height: 1.5;
+        padding-left: 31.944%; /*207/648*100*/
+    }
+    .video_inner a{
+        color:#0b1f38;
+        border: 1px solid #0b1f38;
+        background-color:transparent;
+        transition: 150ms ease-out;
+    }
+    .video_inner a:hover{
+        background-color:#0b1f38;
+        color:#fff;
+    }
+
 }
 
 @media all and (min-width:1300px){
@@ -2086,6 +2158,41 @@
     .CTA_location span{
         font-size: 2.8rem;
     }
+
+    /*sub4 - 1300*/
+    .news_inner article{
+        margin-bottom: 180px;
+    }
+    .news_inner .topline{
+        width: 87.5%;
+        margin-bottom: 250px;
+    }
+    .news_inner .topline .line{
+        right: 6.25%;
+        width: 65.495%;
+        height: 1px;
+    }
+    #news .news_inner article .summery{
+        width: 87.5%;
+    }
+    #news article h3{
+        font-size: 5.5rem;
+    }
+    .news_inner article .summery p{
+        display: block;
+        font-size: 3rem;
+        padding-top: 70px;
+        width:52.4%; /*881/1680*100*/
+    }
+    .news_inner article .news_picture{
+        top:40px;
+        right:6.25%;
+        width: 500px;
+        height: 650px;
+        z-index: -1;
+    }
+    
+    
 }
 
 @media all and (min-width: 1600px){
@@ -2125,6 +2232,55 @@
     .myCar_inner{
         width: 87.5%;
         margin: 0 auto
+    }
+
+    /*sub4 - 1600*/
+    .video_inner{
+        width: 100%;
+    }
+    .video_inner h2{
+        margin-bottom: 45px;
+    }
+    .video_inner .youtube_area{
+        float: left;
+        width: 56.25%;
+        height: 720px;
+        margin-bottom: 58px;
+    }
+    .video_inner .video_right{
+        float: right;
+        width: 40%;/*768/1920*100*/
+        padding-left:0;
+        margin-top: 100px;
+    }
+    .video_inner .video_right .date{
+        font-size: 3.6rem;
+        margin-bottom: 29px;
+    }
+    .video_inner .video_right h3{
+        font-size: 4.5rem;
+        margin-bottom: 40px;
+        line-height: 1.4;
+    }
+    .video_inner .discription{
+        width: 100%;
+        padding: 70px 9.722% 70px 0;
+        margin-bottom: 64px;
+        margin-right:0;
+    }
+    .video_inner .discription::after{
+        top: -55px;
+        width: 170px;
+        height: 250px;
+    }
+    .video_inner .discription p{
+        font-size: 2.8rem;
+        line-height: 1.5;
+        padding-left: 190px; /*207/648*100*/
+    }
+    .video_inner a{
+        clear: both;
+        float: none;
     }
     @keyframes marquee{
         100%{
