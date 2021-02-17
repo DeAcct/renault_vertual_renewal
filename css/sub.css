@@ -961,6 +961,7 @@
         height: 668px;
         margin-top: 10px;
         border-right: 2px solid #f0eae9;
+        transition: 150ms ease-out;
     }
     .years_inner .yearline:before{
         position:absolute;
@@ -971,6 +972,7 @@
         height: 0;
         z-index: -5;
         border-right: 2px solid #99b5c2;
+        transition: 150ms ease-out;
     }
     .years_inner .yearline.reach:before{
         animation: 1s yearline ease-out forwards;
@@ -1332,7 +1334,7 @@
     }
 
     /*sub4 - 768*/
-    .main_wrap h2{
+    .sub4 .main_wrap h2{
         font-size: 5rem;
     }
     .news_inner article{

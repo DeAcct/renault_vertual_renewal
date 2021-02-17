@@ -10,7 +10,6 @@ $(function(){
     var twizyPic = $('#twizy .picture');
     var masterPic = $('#master .picture');
     var autosolution = $('.autosol_cont div');
-    var autosolText = autosolution.find('h3');
     var tableOpenBtn = $('.open_table');
     var table = $('.maint_table');
     var centerName = $('.centerName');
@@ -47,7 +46,7 @@ $(function(){
         parrTargets = [zoePic, capturPic, twizyPic, masterPic];
     }
     else if(nowPage=='sub3'){
-        parrTargets = [autosolution, autosolText];
+        parrTargets = [autosolution];
         /*기본위치로 지도 표시*/
         var container = document.getElementById('map_wrap');
         var options = {
